@@ -1,0 +1,1101 @@
+---
+################################################################################
+#
+#   Profile
+#
+#   - Different configuration profiles may be encoded here to be specified
+#   as parameters to the configtxgen tool
+#
+################################################################################
+Profiles:
+
+    multihostGenesis:
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - *OrdererOrg
+        Consortiums:
+            SampleConsortium:
+                Organizations:
+                    - *Org1
+                    - *Org2
+                    - *Org3
+                    - *Org4
+                    - *Org5
+                    - *Org6
+                    - *Org7
+                    - *Org8
+                    - *Org9
+                    - *Org10
+                    - *Org11
+                    - *Org12
+                    - *Org13
+                    - *Org14
+                    - *Org15
+                    - *Org16
+                    - *Org17
+                    - *Org18
+                    - *Org19
+                    - *Org20
+                    - *Org21
+                    - *Org22
+                    - *Org23
+                    - *Org24
+                    - *Org25
+                    - *Org26
+                    - *Org27
+                    - *Org28
+                    - *Org29
+                    - *Org30
+                    - *Org31
+                    - *Org32
+    multihostChannel:
+        Consortium: SampleConsortium
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1
+                - *Org2
+                - *Org3
+                - *Org4
+                - *Org5
+                - *Org6
+                - *Org7
+                - *Org8
+                - *Org9
+                - *Org10
+                - *Org11
+                - *Org12
+                - *Org13
+                - *Org14
+                - *Org15
+                - *Org16
+                - *Org17
+                - *Org18
+                - *Org19
+                - *Org20
+                - *Org21
+                - *Org22
+                - *Org23
+                - *Org24
+                - *Org25
+                - *Org26
+                - *Org27
+                - *Org28
+                - *Org29
+                - *Org30
+                - *Org31
+                - *Org32
+
+################################################################################
+#
+#   Section: Organizations
+#
+#   - This section defines the different organizational identities which will
+#   be referenced later in the configuration.
+#
+################################################################################
+Organizations:
+
+    # SampleOrg defines an MSP using the sampleconfig.  It should never be used
+    # in production but may be used as a template for other definitions
+    - &OrdererOrg
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: OrdererOrg
+
+        # ID to load the MSP definition as
+        ID: OrdererMSP
+
+        # MSPDir is the filesystem path which contains the MSP configuration
+        MSPDir: crypto-config/ordererOrganizations/example.com/msp 
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+    - &Org1
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org1MSP
+
+        # ID to load the MSP definition as
+        ID: Org1MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org1.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7051
+
+    - &Org2
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org2MSP
+
+        # ID to load the MSP definition as
+        ID: Org2MSP
+
+        MSPDir: crypto-config/peerOrganizations/org2.example.com/msp 
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7071
+    - &Org3
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org3MSP
+
+        # ID to load the MSP definition as
+        ID: Org3MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org3.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7091
+
+    - &Org4
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org4MSP
+
+        # ID to load the MSP definition as
+        ID: Org4MSP
+
+        MSPDir: crypto-config/peerOrganizations/org4.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7111
+    - &Org5
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org5MSP
+
+        # ID to load the MSP definition as
+        ID: Org5MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org5.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7131
+
+    - &Org6
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org6MSP
+
+        # ID to load the MSP definition as
+        ID: Org6MSP
+
+        MSPDir: crypto-config/peerOrganizations/org6.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7151
+    - &Org7
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org7MSP
+
+        # ID to load the MSP definition as
+        ID: Org7MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org7.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7171
+
+    - &Org8
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org8MSP
+
+        # ID to load the MSP definition as
+        ID: Org8MSP
+
+        MSPDir: crypto-config/peerOrganizations/org8.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7191
+    - &Org9
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org9MSP
+
+        # ID to load the MSP definition as
+        ID: Org9MSP
+
+        MSPDir: crypto-config/peerOrganizations/org9.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7211
+    - &Org10
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org10MSP
+
+        # ID to load the MSP definition as
+        ID: Org10MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org10.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7231
+
+    - &Org11
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org11MSP
+
+        # ID to load the MSP definition as
+        ID: Org11MSP
+
+        MSPDir: crypto-config/peerOrganizations/org11.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7251
+    - &Org12
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org12MSP
+
+        # ID to load the MSP definition as
+        ID: Org12MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org12.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7271
+
+    - &Org13
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org13MSP
+
+        # ID to load the MSP definition as
+        ID: Org13MSP
+
+        MSPDir: crypto-config/peerOrganizations/org13.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7291
+    - &Org14
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org14MSP
+
+        # ID to load the MSP definition as
+        ID: Org14MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org14.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7311
+
+    - &Org15
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org15MSP
+
+        # ID to load the MSP definition as
+        ID: Org15MSP
+
+        MSPDir: crypto-config/peerOrganizations/org15.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7331
+    - &Org16
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org16MSP
+
+        # ID to load the MSP definition as
+        ID: Org16MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org16.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7351
+
+    - &Org17
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org17MSP
+
+        # ID to load the MSP definition as
+        ID: Org17MSP
+
+        MSPDir: crypto-config/peerOrganizations/org17.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7371
+    - &Org18
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org18MSP
+
+        # ID to load the MSP definition as
+        ID: Org18MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org18.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7391
+
+    - &Org19
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org19MSP
+
+        # ID to load the MSP definition as
+        ID: Org19MSP
+
+        MSPDir: crypto-config/peerOrganizations/org19.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7411
+    - &Org20
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org20MSP
+
+        # ID to load the MSP definition as
+        ID: Org20MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org20.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7431
+
+    - &Org21
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org21MSP
+
+        # ID to load the MSP definition as
+        ID: Org21MSP
+
+        MSPDir: crypto-config/peerOrganizations/org21.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7451
+    - &Org22
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org22MSP
+
+        # ID to load the MSP definition as
+        ID: Org22MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org22.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7471
+
+    - &Org23
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org23MSP
+
+        # ID to load the MSP definition as
+        ID: Org23MSP
+
+        MSPDir: crypto-config/peerOrganizations/org23.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7491
+    - &Org24
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org24MSP
+
+        # ID to load the MSP definition as
+        ID: Org24MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org24.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7511
+
+    - &Org25
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org25MSP
+
+        # ID to load the MSP definition as
+        ID: Org25MSP
+
+        MSPDir: crypto-config/peerOrganizations/org25.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7531
+    - &Org26
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org26MSP
+
+        # ID to load the MSP definition as
+        ID: Org26MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org26.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7551
+
+    - &Org27
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org27MSP
+
+        # ID to load the MSP definition as
+        ID: Org27MSP
+
+        MSPDir: crypto-config/peerOrganizations/org27.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7571
+    - &Org28
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org28MSP
+
+        # ID to load the MSP definition as
+        ID: Org28MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org28.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7591
+
+    - &Org29
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org29MSP
+
+        # ID to load the MSP definition as
+        ID: Org29MSP
+
+        MSPDir: crypto-config/peerOrganizations/org29.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7611
+    - &Org30
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org30MSP
+
+        # ID to load the MSP definition as
+        ID: Org30MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org30.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7631
+
+    - &Org31
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org31MSP
+
+        # ID to load the MSP definition as
+        ID: Org31MSP
+
+        MSPDir: crypto-config/peerOrganizations/org31.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.37.138.34
+              Port: 7651
+    - &Org32
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org32MSP
+
+        # ID to load the MSP definition as
+        ID: Org32MSP
+
+        MSPDir:  crypto-config/peerOrganizations/org32.example.com/msp
+
+        # BCCSP (Blockchain crypto provider): Select which crypto implementation or
+        # library to use
+        BCCSP:
+            Default: SW
+            SW:
+                Hash: SHA2
+                Security: 256
+                # Location of Key Store. If this is unset, a location will
+                # be chosen using 'MSPDir'/keystore
+                FileKeyStore:
+                    KeyStore:
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 9.42.21.199
+              Port: 7671
+
+################################################################################
+#
+#   SECTION: Orderer
+#
+#   - This section defines the values to encode into a config transaction or
+#   genesis block for orderer related parameters
+#
+################################################################################
+Orderer: &OrdererDefaults
+
+    # Orderer Type: The orderer implementation to start
+    # Available types are "solo" and "kafka"
+    OrdererType: kafka
+
+    Addresses:
+        - 9.37.192.36:7110
+        - 9.37.192.36:7090
+        - 9.37.192.36:7070
+        - 9.37.192.36:7050
+
+    # Batch Timeout: The amount of time to wait before creating a batch
+    BatchTimeout: 2s
+
+    # Batch Size: Controls the number of messages batched into a block
+    BatchSize:
+
+        # Max Message Count: The maximum number of messages to permit in a batch
+        MaxMessageCount: 10
+
+        # Absolute Max Bytes: The absolute maximum number of bytes allowed for
+        # the serialized messages in a batch.
+        AbsoluteMaxBytes: 99 MB
+
+        # Preferred Max Bytes: The preferred maximum number of bytes allowed for
+        # the serialized messages in a batch. A message larger than the preferred
+        # max bytes will result in a batch larger than preferred max bytes.
+        PreferredMaxBytes: 512 KB
+
+    Kafka:
+        # Brokers: A list of Kafka brokers to which the orderer connects
+        # NOTE: Use IP:port notation
+        Brokers:
+            - 9.37.192.36:9092
+            - 9.37.192.36:9093
+            - 9.37.192.36:9094
+            - 9.37.192.36:9095
+            - 9.37.192.36:9096
+
+    # Organizations is the list of orgs which are defined as participants on
+    # the orderer side of the network
+    Organizations:
+
+################################################################################
+#
+#   SECTION: Application
+#
+#   - This section defines the values to encode into a config transaction or
+#   genesis block for application related parameters
+#
+################################################################################
+Application: &ApplicationDefaults
+
+    # Organizations is the list of orgs which are defined as participants on
+    # the application side of the network
+    Organizations:

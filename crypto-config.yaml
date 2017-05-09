@@ -1,0 +1,268 @@
+# ---------------------------------------------------------------------------
+# "OrdererOrgs" - Definition of organizations managing orderer nodes
+# ---------------------------------------------------------------------------
+OrdererOrgs:
+  # ---------------------------------------------------------------------------
+  # Orderer
+  # ---------------------------------------------------------------------------
+  - Name: Orderer1
+    Domain: example.com
+    # ---------------------------------------------------------------------------
+    # "Specs" - See PeerOrgs below for complete description
+    # ---------------------------------------------------------------------------
+    Specs:
+      - Hostname: 9.37.192.36
+  - Name: Orderer2
+    Domain: example.com
+    Specs:
+      - Hostname: 9.37.192.36
+  - Name: Orderer3
+    Domain: example.com
+    Specs:
+      - Hostname: 9.37.196.36
+  - Name: Orderer4
+    Domain: example.com
+    Specs:
+      - Hostname: 9.37.196.36
+# ---------------------------------------------------------------------------
+# "PeerOrgs" - Definition of organizations managing peer nodes
+# ---------------------------------------------------------------------------
+PeerOrgs:
+  # ---------------------------------------------------------------------------
+  # Org1
+  # ---------------------------------------------------------------------------
+  - Name: Org1MSP
+    Domain: org1.example.com
+    # ---------------------------------------------------------------------------
+    # "Specs"
+    # ---------------------------------------------------------------------------
+    # Uncomment this section to enable the explicit definition of hosts in your
+    # configuration.  Most users will want to use Template, below
+    #
+    # Specs is an array of Spec entries.  Each Spec entry consists of two fields:
+    #   - Hostname:   (Required) The desired hostname, sans the domain.
+    #   - CommonName: (Optional) Specifies the template or explicit override for
+    #                 the CN.  By default, this is the template:
+    #
+    #                              "{{.Hostname}}.{{.Domain}}"
+    #
+    #                 which obtains its values from the Spec.Hostname and
+    #                 Org.Domain, respectively.
+    # ---------------------------------------------------------------------------
+    # Specs:
+    #   - Hostname: foo # implicitly "foo.org1.example.com"
+    #     CommonName: foo27.org5.example.com # overrides Hostname-based FQDN set above
+    #   - Hostname: bar
+    #   - Hostname: baz
+    # ---------------------------------------------------------------------------
+    # "Template"
+    # ---------------------------------------------------------------------------
+    # Allows for the definition of 1 or more hosts that are created sequentially
+    # from a template. By default, this looks like "peer%d" from 0 to Count-1.
+    # You may override the number of nodes (Count), the starting index (Start)
+    # or the template used to construct the name (Hostname).
+    #
+    # Note: Template and Specs are not mutually exclusive.  You may define both
+    # sections and the aggregate nodes will be created for you.  Take care with
+    # name collisions
+    # ---------------------------------------------------------------------------
+    Template:
+      Count: 2
+      # Start: 5
+      # Hostname: {{.Prefix}}{{.Index}} # default
+    # ---------------------------------------------------------------------------
+    # "Users"
+    # ---------------------------------------------------------------------------
+    # Count: The number of user accounts _in addition_ to Admin
+    # ---------------------------------------------------------------------------
+    Users:
+      Count: 1
+  # ---------------------------------------------------------------------------
+  # Org2: See "Org1" for full specification
+  # ---------------------------------------------------------------------------
+  - Name: Org2MSP
+    Domain: org2.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org3MSP
+    Domain: org3.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org4MSP
+    Domain: org4.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org5MSP
+    Domain: org5.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org6MSP
+    Domain: org6.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org7MSP
+    Domain: org7.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org8MSP
+    Domain: org8.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org9MSP
+    Domain: org9.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org10MSP
+    Domain: org10.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org11MSP
+    Domain: org11.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org12MSP
+    Domain: org12.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org13MSP
+    Domain: org13.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org14MSP
+    Domain: org14.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org15MSP
+    Domain: org15.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org16MSP
+    Domain: org16.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org17MSP
+    Domain: org17.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org18MSP
+    Domain: org18.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org19MSP
+    Domain: org19.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org20MSP
+    Domain: org20.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org21MSP
+    Domain: org21.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org22MSP
+    Domain: org22.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org23MSP
+    Domain: org23.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org24MSP
+    Domain: org24.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org25MSP
+    Domain: org25.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org26MSP
+    Domain: org26.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org27MSP
+    Domain: org27.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org28MSP
+    Domain: org28.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org29MSP
+    Domain: org29.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org30MSP
+    Domain: org30.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org31MSP
+    Domain: org31.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Org32MSP
+    Domain: org32.example.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1

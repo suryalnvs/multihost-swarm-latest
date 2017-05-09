@@ -1,0 +1,1221 @@
+2017-05-04 19:42:42.884 UTC [orderer/main] main -> INFO 001[0m Starting orderer with TLS enabled
+[36m2017-05-04 19:42:42.913 UTC [bccsp_sw] openKeyStore -> DEBU 002[0m KeyStore opened at [/var/hyperledger/orderer/msp/keystore]...done
+[36m2017-05-04 19:42:42.914 UTC [bccsp] initBCCSP -> DEBU 003[0m Initialize BCCSP [SW]
+[36m2017-05-04 19:42:42.914 UTC [msp] getPemMaterialFromDir -> DEBU 004[0m Reading directory /var/hyperledger/orderer/msp/signcerts
+[36m2017-05-04 19:42:42.914 UTC [msp] getPemMaterialFromDir -> DEBU 005[0m Inspecting file /var/hyperledger/orderer/msp/signcerts/orderer4.example.com-cert.pem
+[36m2017-05-04 19:42:42.914 UTC [msp] getPemMaterialFromDir -> DEBU 006[0m Reading directory /var/hyperledger/orderer/msp/cacerts
+[36m2017-05-04 19:42:42.914 UTC [msp] getPemMaterialFromDir -> DEBU 007[0m Inspecting file /var/hyperledger/orderer/msp/cacerts/ca.example.com-cert.pem
+[36m2017-05-04 19:42:42.914 UTC [msp] getPemMaterialFromDir -> DEBU 008[0m Reading directory /var/hyperledger/orderer/msp/signcerts
+[36m2017-05-04 19:42:42.914 UTC [msp] getPemMaterialFromDir -> DEBU 009[0m Inspecting file /var/hyperledger/orderer/msp/signcerts/orderer4.example.com-cert.pem
+[36m2017-05-04 19:42:42.914 UTC [msp] getPemMaterialFromDir -> DEBU 00a[0m Reading directory /var/hyperledger/orderer/msp/admincerts
+[36m2017-05-04 19:42:42.915 UTC [msp] getPemMaterialFromDir -> DEBU 00b[0m Inspecting file /var/hyperledger/orderer/msp/admincerts/Admin@example.com-cert.pem
+[36m2017-05-04 19:42:42.915 UTC [msp] getPemMaterialFromDir -> DEBU 00c[0m Reading directory /var/hyperledger/orderer/msp/intermediatecerts
+2017-05-04 19:42:42.915 UTC [msp] getMspConfig -> INFO 00d[0m intermidiate certs folder not found at [/var/hyperledger/orderer/msp/intermediatecerts]. Skipping.: [stat /var/hyperledger/orderer/msp/intermediatecerts: no such file or directory]
+[36m2017-05-04 19:42:42.915 UTC [msp] getPemMaterialFromDir -> DEBU 00e[0m Reading directory /var/hyperledger/orderer/msp/crls
+2017-05-04 19:42:42.915 UTC [msp] getMspConfig -> INFO 00f[0m crls folder not found at [/var/hyperledger/orderer/msp/intermediatecerts]. Skipping.: [stat /var/hyperledger/orderer/msp/crls: no such file or directory]
+2017-05-04 19:42:42.915 UTC [msp] getMspConfig -> INFO 010[0m MSP configuration file not found at [/var/hyperledger/orderer/msp/config.yaml]: [stat /var/hyperledger/orderer/msp/config.yaml: no such file or directory]
+[36m2017-05-04 19:42:42.915 UTC [msp] NewBccspMsp -> DEBU 011[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.915 UTC [msp] GetLocalMSP -> DEBU 012[0m Created new local MSP
+[36m2017-05-04 19:42:42.915 UTC [msp] Setup -> DEBU 013[0m Setting up MSP instance OrdererMSP
+[36m2017-05-04 19:42:42.916 UTC [msp] newIdentity -> DEBU 014[0m Creating identity instance for ID &{OrdererMSP 6a25de4d86306141b313df662f539ebfaa238f6ddd68981cfcab099762839e9b}
+[36m2017-05-04 19:42:42.916 UTC [msp] newIdentity -> DEBU 015[0m Creating identity instance for ID &{OrdererMSP d6d2ae055df56f4a624b906daab414fbbce1a973cf716026577c3308b85df8b3}
+[36m2017-05-04 19:42:42.916 UTC [msp] newIdentity -> DEBU 016[0m Creating identity instance for ID &{OrdererMSP b337c3e7d2f9dfde7c4bec611f176ff756fdb9526c1262ba132c7eab2b5659d6}
+[36m2017-05-04 19:42:42.916 UTC [bccsp_sw] loadPrivateKey -> DEBU 017[0m Loading private key [a01cb2921348c543f8be24ce543899fd992815a4c5492c2f7e9e166c695d8851] at [/var/hyperledger/orderer/msp/keystore/a01cb2921348c543f8be24ce543899fd992815a4c5492c2f7e9e166c695d8851_sk]...
+[36m2017-05-04 19:42:42.917 UTC [orderer/main] createLedgerFactory -> DEBU 018[0m Ledger dir: /var/hyperledger/production/orderer
+[36m2017-05-04 19:42:42.917 UTC [kvledger.util] CreateDirIfMissing -> DEBU 019[0m CreateDirIfMissing [/var/hyperledger/production/orderer/index/]
+[36m2017-05-04 19:42:42.917 UTC [kvledger.util] logDirStatus -> DEBU 01a[0m Before creating dir - [/var/hyperledger/production/orderer/index/] does not exist
+[36m2017-05-04 19:42:42.917 UTC [kvledger.util] logDirStatus -> DEBU 01b[0m After creating dir - [/var/hyperledger/production/orderer/index/] exists
+[36m2017-05-04 19:42:42.926 UTC [kvledger] newBlockfileMgr -> DEBU 01c[0m newBlockfileMgr() initializing file-based block storage for ledger: testchainid 
+[36m2017-05-04 19:42:42.926 UTC [kvledger.util] CreateDirIfMissing -> DEBU 01d[0m CreateDirIfMissing [/var/hyperledger/production/orderer/chains/testchainid/]
+[36m2017-05-04 19:42:42.926 UTC [kvledger.util] logDirStatus -> DEBU 01e[0m Before creating dir - [/var/hyperledger/production/orderer/chains/testchainid/] does not exist
+[36m2017-05-04 19:42:42.926 UTC [kvledger.util] logDirStatus -> DEBU 01f[0m After creating dir - [/var/hyperledger/production/orderer/chains/testchainid/] exists
+[36m2017-05-04 19:42:42.927 UTC [kvledger] syncCPInfoFromFS -> DEBU 020[0m Starting checkpoint=latestFileChunkSuffixNum=[0], latestFileChunksize=[0], isChainEmpty=[true], lastBlockNumber=[0]
+[36m2017-05-04 19:42:42.927 UTC [kvledger] syncCPInfoFromFS -> DEBU 021[0m status of file [/var/hyperledger/production/orderer/chains/testchainid/blockfile_000000]: exists=[false], size=[0]
+[36m2017-05-04 19:42:42.927 UTC [kvledger] newBlockIndex -> DEBU 022[0m newBlockIndex() - indexItems:[[BlockNum]]
+[36m2017-05-04 19:42:42.927 UTC [kvledger] newBlockfileStream -> DEBU 023[0m newBlockfileStream(): filePath=[/var/hyperledger/production/orderer/chains/testchainid/blockfile_000000], startOffset=[0]
+[36m2017-05-04 19:42:42.927 UTC [kvledger] nextBlockBytesAndPlacementInfo -> DEBU 024[0m Finished reading file number [0]
+[36m2017-05-04 19:42:42.927 UTC [kvledger] nextBlockBytesAndPlacementInfo -> DEBU 025[0m blockbytes [0] read from file [0]
+[36m2017-05-04 19:42:42.929 UTC [kvledger] indexBlock -> DEBU 026[0m Indexing block [blockNum=0, blockHash=[]byte{0x23, 0x55, 0x53, 0xd3, 0x70, 0x65, 0x89, 0xea, 0x21, 0x88, 0x1c, 0x33, 0x22, 0x81, 0x7f, 0xbe, 0x81, 0x2c, 0x5, 0x2d, 0xc5, 0x6d, 0xa9, 0x81, 0x7f, 0x68, 0xfa, 0x72, 0x42, 0xf0, 0x2e, 0x2f} txOffsets=
+txId=1cb7b6e126c580d8fdda34efc1db986712ed8adab9cbbf5f24c736d4ead98ac2 locPointer=offset=39, bytesLength=64163
+]
+[36m2017-05-04 19:42:42.929 UTC [kvledger] updateCheckpoint -> DEBU 027[0m Broadcasting about update checkpointInfo: latestFileChunkSuffixNum=[0], latestFileChunksize=[64207], isChainEmpty=[false], lastBlockNumber=[0]
+[36m2017-05-04 19:42:42.929 UTC [kvledger] retrieveBlockByNumber -> DEBU 028[0m retrieveBlockByNumber() - blockNum = [0]
+[36m2017-05-04 19:42:42.929 UTC [kvledger] newBlockfileStream -> DEBU 029[0m newBlockfileStream(): filePath=[/var/hyperledger/production/orderer/chains/testchainid/blockfile_000000], startOffset=[0]
+[36m2017-05-04 19:42:42.929 UTC [kvledger] nextBlockBytesAndPlacementInfo -> DEBU 02a[0m Remaining bytes=[64207], Going to peek [8] bytes
+[36m2017-05-04 19:42:42.929 UTC [kvledger] nextBlockBytesAndPlacementInfo -> DEBU 02b[0m Returning blockbytes - length=[64204], placementInfo={fileNum=[0], startOffset=[0], bytesOffset=[3]}
+[36m2017-05-04 19:42:42.929 UTC [kvledger] retrieveBlockByNumber -> DEBU 02c[0m retrieveBlockByNumber() - blockNum = [0]
+[36m2017-05-04 19:42:42.929 UTC [kvledger] newBlockfileStream -> DEBU 02d[0m newBlockfileStream(): filePath=[/var/hyperledger/production/orderer/chains/testchainid/blockfile_000000], startOffset=[0]
+[36m2017-05-04 19:42:42.929 UTC [kvledger] nextBlockBytesAndPlacementInfo -> DEBU 02e[0m Remaining bytes=[64207], Going to peek [8] bytes
+[36m2017-05-04 19:42:42.929 UTC [kvledger] nextBlockBytesAndPlacementInfo -> DEBU 02f[0m Returning blockbytes - length=[64204], placementInfo={fileNum=[0], startOffset=[0], bytesOffset=[3]}
+[36m2017-05-04 19:42:42.930 UTC [common/config] NewStandardValues -> DEBU 030[0m Initializing protos for *config.ChannelProtos
+[36m2017-05-04 19:42:42.930 UTC [common/config] initializeProtosStruct -> DEBU 031[0m Processing field: HashingAlgorithm
+[36m2017-05-04 19:42:42.930 UTC [common/config] initializeProtosStruct -> DEBU 032[0m Processing field: BlockDataHashingStructure
+[36m2017-05-04 19:42:42.930 UTC [common/config] initializeProtosStruct -> DEBU 033[0m Processing field: OrdererAddresses
+[36m2017-05-04 19:42:42.930 UTC [common/config] initializeProtosStruct -> DEBU 034[0m Processing field: Consortium
+[36m2017-05-04 19:42:42.931 UTC [common/configtx] addToMap -> DEBU 035[0m Adding to config map: [Groups] /Channel
+[36m2017-05-04 19:42:42.931 UTC [common/configtx] addToMap -> DEBU 036[0m Adding to config map: [Groups] /Channel/Consortiums
+[36m2017-05-04 19:42:42.931 UTC [common/configtx] addToMap -> DEBU 037[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium
+[36m2017-05-04 19:42:42.931 UTC [common/configtx] addToMap -> DEBU 038[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org4MSP
+[36m2017-05-04 19:42:42.931 UTC [common/configtx] addToMap -> DEBU 039[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org4MSP/MSP
+[36m2017-05-04 19:42:42.931 UTC [common/configtx] addToMap -> DEBU 03a[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org4MSP/Admins
+[36m2017-05-04 19:42:42.931 UTC [common/configtx] addToMap -> DEBU 03b[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org4MSP/Readers
+[36m2017-05-04 19:42:42.931 UTC [common/configtx] addToMap -> DEBU 03c[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org4MSP/Writers
+[36m2017-05-04 19:42:42.931 UTC [common/configtx] addToMap -> DEBU 03d[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org31MSP
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 03e[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org31MSP/MSP
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 03f[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org31MSP/Readers
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 040[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org31MSP/Writers
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 041[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org31MSP/Admins
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 042[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org24MSP
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 043[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org24MSP/MSP
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 044[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org24MSP/Admins
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 045[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org24MSP/Readers
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 046[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org24MSP/Writers
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 047[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org9MSP
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 048[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org9MSP/MSP
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 049[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org9MSP/Admins
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 04a[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org9MSP/Readers
+[36m2017-05-04 19:42:42.932 UTC [common/configtx] addToMap -> DEBU 04b[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org9MSP/Writers
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 04c[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org12MSP
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 04d[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org12MSP/MSP
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 04e[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org12MSP/Writers
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 04f[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org12MSP/Admins
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 050[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org12MSP/Readers
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 051[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org1MSP
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 052[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org1MSP/MSP
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 053[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org1MSP/Admins
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 054[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org1MSP/Readers
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 055[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org1MSP/Writers
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 056[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org10MSP
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 057[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org10MSP/MSP
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 058[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org10MSP/Admins
+[36m2017-05-04 19:42:42.933 UTC [common/configtx] addToMap -> DEBU 059[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org10MSP/Readers
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 05a[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org10MSP/Writers
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 05b[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org27MSP
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 05c[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org27MSP/MSP
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 05d[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org27MSP/Admins
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 05e[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org27MSP/Readers
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 05f[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org27MSP/Writers
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 060[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org17MSP
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 061[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org17MSP/MSP
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 062[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org17MSP/Readers
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 063[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org17MSP/Writers
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 064[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org17MSP/Admins
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 065[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org6MSP
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 066[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org6MSP/MSP
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 067[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org6MSP/Admins
+[36m2017-05-04 19:42:42.934 UTC [common/configtx] addToMap -> DEBU 068[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org6MSP/Readers
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 069[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org6MSP/Writers
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 06a[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org29MSP
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 06b[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org29MSP/MSP
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 06c[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org29MSP/Readers
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 06d[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org29MSP/Writers
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 06e[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org29MSP/Admins
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 06f[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org15MSP
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 070[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org15MSP/MSP
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 071[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org15MSP/Readers
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 072[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org15MSP/Writers
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 073[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org15MSP/Admins
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 074[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org25MSP
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 075[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org25MSP/MSP
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 076[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org25MSP/Writers
+[36m2017-05-04 19:42:42.935 UTC [common/configtx] addToMap -> DEBU 077[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org25MSP/Admins
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 078[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org25MSP/Readers
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 079[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org20MSP
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 07a[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org20MSP/MSP
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 07b[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org20MSP/Admins
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 07c[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org20MSP/Readers
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 07d[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org20MSP/Writers
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 07e[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org28MSP
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 07f[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org28MSP/MSP
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 080[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org28MSP/Admins
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 081[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org28MSP/Readers
+[36m2017-05-04 19:42:42.936 UTC [common/configtx] addToMap -> DEBU 082[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org28MSP/Writers
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 083[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org7MSP
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 084[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org7MSP/MSP
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 085[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org7MSP/Writers
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 086[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org7MSP/Admins
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 087[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org7MSP/Readers
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 088[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org5MSP
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 089[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org5MSP/MSP
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 08a[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org5MSP/Readers
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 08b[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org5MSP/Writers
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 08c[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org5MSP/Admins
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 08d[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org18MSP
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 08e[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org18MSP/MSP
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 08f[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org18MSP/Readers
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 090[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org18MSP/Writers
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 091[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org18MSP/Admins
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 092[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org30MSP
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 093[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org30MSP/MSP
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 094[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org30MSP/Admins
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 095[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org30MSP/Readers
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 096[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org30MSP/Writers
+[36m2017-05-04 19:42:42.937 UTC [common/configtx] addToMap -> DEBU 097[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org14MSP
+[36m2017-05-04 19:42:42.938 UTC [common/configtx] addToMap -> DEBU 098[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org14MSP/MSP
+[36m2017-05-04 19:42:42.938 UTC [common/configtx] addToMap -> DEBU 099[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org14MSP/Readers
+[36m2017-05-04 19:42:42.938 UTC [common/configtx] addToMap -> DEBU 09a[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org14MSP/Writers
+[36m2017-05-04 19:42:42.938 UTC [common/configtx] addToMap -> DEBU 09b[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org14MSP/Admins
+[36m2017-05-04 19:42:42.938 UTC [common/configtx] addToMap -> DEBU 09c[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org13MSP
+[36m2017-05-04 19:42:42.938 UTC [common/configtx] addToMap -> DEBU 09d[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org13MSP/MSP
+[36m2017-05-04 19:42:42.938 UTC [common/configtx] addToMap -> DEBU 09e[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org13MSP/Readers
+[36m2017-05-04 19:42:42.938 UTC [common/configtx] addToMap -> DEBU 09f[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org13MSP/Writers
+[36m2017-05-04 19:42:42.938 UTC [common/configtx] addToMap -> DEBU 0a0[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org13MSP/Admins
+[36m2017-05-04 19:42:42.938 UTC [common/configtx] addToMap -> DEBU 0a1[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org22MSP
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0a2[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org22MSP/MSP
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0a3[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org22MSP/Admins
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0a4[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org22MSP/Readers
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0a5[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org22MSP/Writers
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0a6[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org16MSP
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0a7[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org16MSP/MSP
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0a8[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org16MSP/Writers
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0a9[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org16MSP/Admins
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0aa[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org16MSP/Readers
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0ab[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org3MSP
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0ac[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org3MSP/MSP
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0ad[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org3MSP/Admins
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0ae[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org3MSP/Readers
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0af[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org3MSP/Writers
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0b0[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org26MSP
+[36m2017-05-04 19:42:42.939 UTC [common/configtx] addToMap -> DEBU 0b1[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org26MSP/MSP
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0b2[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org26MSP/Readers
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0b3[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org26MSP/Writers
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0b4[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org26MSP/Admins
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0b5[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org2MSP
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0b6[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org2MSP/MSP
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0b7[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org2MSP/Readers
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0b8[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org2MSP/Writers
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0b9[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org2MSP/Admins
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0ba[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org23MSP
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0bb[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org23MSP/MSP
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0bc[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org23MSP/Admins
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0bd[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org23MSP/Readers
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0be[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org23MSP/Writers
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0bf[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org19MSP
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0c0[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org19MSP/MSP
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0c1[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org19MSP/Writers
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0c2[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org19MSP/Admins
+[36m2017-05-04 19:42:42.940 UTC [common/configtx] addToMap -> DEBU 0c3[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org19MSP/Readers
+[36m2017-05-04 19:42:42.941 UTC [common/configtx] addToMap -> DEBU 0c4[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org8MSP
+[36m2017-05-04 19:42:42.941 UTC [common/configtx] addToMap -> DEBU 0c5[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org8MSP/MSP
+[36m2017-05-04 19:42:42.941 UTC [common/configtx] addToMap -> DEBU 0c6[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org8MSP/Admins
+[36m2017-05-04 19:42:42.941 UTC [common/configtx] addToMap -> DEBU 0c7[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org8MSP/Readers
+[36m2017-05-04 19:42:42.941 UTC [common/configtx] addToMap -> DEBU 0c8[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org8MSP/Writers
+[36m2017-05-04 19:42:42.941 UTC [common/configtx] addToMap -> DEBU 0c9[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org21MSP
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0ca[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org21MSP/MSP
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0cb[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org21MSP/Readers
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0cc[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org21MSP/Writers
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0cd[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org21MSP/Admins
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0ce[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org11MSP
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0cf[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org11MSP/MSP
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0d0[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org11MSP/Readers
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0d1[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org11MSP/Writers
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0d2[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org11MSP/Admins
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0d3[0m Adding to config map: [Groups] /Channel/Consortiums/SampleConsortium/Org32MSP
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0d4[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/Org32MSP/MSP
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0d5[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org32MSP/Admins
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0d6[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org32MSP/Readers
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0d7[0m Adding to config map: [Policy] /Channel/Consortiums/SampleConsortium/Org32MSP/Writers
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0d8[0m Adding to config map: [Values] /Channel/Consortiums/SampleConsortium/ChannelCreationPolicy
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0d9[0m Adding to config map: [Groups] /Channel/Orderer
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0da[0m Adding to config map: [Groups] /Channel/Orderer/OrdererOrg
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0db[0m Adding to config map: [Values] /Channel/Orderer/OrdererOrg/MSP
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0dc[0m Adding to config map: [Policy] /Channel/Orderer/OrdererOrg/Writers
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0dd[0m Adding to config map: [Policy] /Channel/Orderer/OrdererOrg/Admins
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0de[0m Adding to config map: [Policy] /Channel/Orderer/OrdererOrg/Readers
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0df[0m Adding to config map: [Values] /Channel/Orderer/BatchSize
+[36m2017-05-04 19:42:42.942 UTC [common/configtx] addToMap -> DEBU 0e0[0m Adding to config map: [Values] /Channel/Orderer/BatchTimeout
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0e1[0m Adding to config map: [Values] /Channel/Orderer/ChannelRestrictions
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0e2[0m Adding to config map: [Values] /Channel/Orderer/KafkaBrokers
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0e3[0m Adding to config map: [Values] /Channel/Orderer/ConsensusType
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0e4[0m Adding to config map: [Policy] /Channel/Orderer/Writers
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0e5[0m Adding to config map: [Policy] /Channel/Orderer/Admins
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0e6[0m Adding to config map: [Policy] /Channel/Orderer/BlockValidation
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0e7[0m Adding to config map: [Policy] /Channel/Orderer/Readers
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0e8[0m Adding to config map: [Values] /Channel/HashingAlgorithm
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0e9[0m Adding to config map: [Values] /Channel/BlockDataHashingStructure
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0ea[0m Adding to config map: [Values] /Channel/OrdererAddresses
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0eb[0m Adding to config map: [Policy] /Channel/Admins
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0ec[0m Adding to config map: [Policy] /Channel/Readers
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] addToMap -> DEBU 0ed[0m Adding to config map: [Policy] /Channel/Writers
+[36m2017-05-04 19:42:42.943 UTC [common/configtx] processConfig -> DEBU 0ee[0m Beginning new config for channel testchainid
+[36m2017-05-04 19:42:42.943 UTC [common/config] NewStandardValues -> DEBU 0ef[0m Initializing protos for *config.ChannelProtos
+[36m2017-05-04 19:42:42.943 UTC [common/config] initializeProtosStruct -> DEBU 0f0[0m Processing field: HashingAlgorithm
+[36m2017-05-04 19:42:42.943 UTC [common/config] initializeProtosStruct -> DEBU 0f1[0m Processing field: BlockDataHashingStructure
+[36m2017-05-04 19:42:42.943 UTC [common/config] initializeProtosStruct -> DEBU 0f2[0m Processing field: OrdererAddresses
+[36m2017-05-04 19:42:42.943 UTC [common/config] initializeProtosStruct -> DEBU 0f3[0m Processing field: Consortium
+[36m2017-05-04 19:42:42.943 UTC [policies] ProposePolicy -> DEBU 0f4[0m Proposed new policy Readers for Channel
+[36m2017-05-04 19:42:42.943 UTC [policies] ProposePolicy -> DEBU 0f5[0m Proposed new policy Writers for Channel
+[36m2017-05-04 19:42:42.943 UTC [policies] ProposePolicy -> DEBU 0f6[0m Proposed new policy Admins for Channel
+[36m2017-05-04 19:42:42.943 UTC [common/config] NewStandardValues -> DEBU 0f7[0m Initializing protos for *config.ConsortiumProtos
+[36m2017-05-04 19:42:42.943 UTC [common/config] initializeProtosStruct -> DEBU 0f8[0m Processing field: ChannelCreationPolicy
+[36m2017-05-04 19:42:42.943 UTC [common/config] NewStandardValues -> DEBU 0f9[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.943 UTC [common/config] initializeProtosStruct -> DEBU 0fa[0m Processing field: MSP
+[36m2017-05-04 19:42:42.943 UTC [policies] ProposePolicy -> DEBU 0fb[0m Proposed new policy Admins for Org12MSP
+[36m2017-05-04 19:42:42.943 UTC [policies] ProposePolicy -> DEBU 0fc[0m Proposed new policy Readers for Org12MSP
+[36m2017-05-04 19:42:42.943 UTC [policies] ProposePolicy -> DEBU 0fd[0m Proposed new policy Writers for Org12MSP
+[36m2017-05-04 19:42:42.943 UTC [common/config] NewStandardValues -> DEBU 0fe[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.943 UTC [common/config] initializeProtosStruct -> DEBU 0ff[0m Processing field: MSP
+[36m2017-05-04 19:42:42.943 UTC [policies] ProposePolicy -> DEBU 100[0m Proposed new policy Admins for Org1MSP
+[36m2017-05-04 19:42:42.943 UTC [policies] ProposePolicy -> DEBU 101[0m Proposed new policy Readers for Org1MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 102[0m Proposed new policy Writers for Org1MSP
+[36m2017-05-04 19:42:42.944 UTC [common/config] NewStandardValues -> DEBU 103[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.944 UTC [common/config] initializeProtosStruct -> DEBU 104[0m Processing field: MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 105[0m Proposed new policy Admins for Org10MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 106[0m Proposed new policy Readers for Org10MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 107[0m Proposed new policy Writers for Org10MSP
+[36m2017-05-04 19:42:42.944 UTC [common/config] NewStandardValues -> DEBU 108[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.944 UTC [common/config] initializeProtosStruct -> DEBU 109[0m Processing field: MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 10a[0m Proposed new policy Admins for Org27MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 10b[0m Proposed new policy Readers for Org27MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 10c[0m Proposed new policy Writers for Org27MSP
+[36m2017-05-04 19:42:42.944 UTC [common/config] NewStandardValues -> DEBU 10d[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.944 UTC [common/config] initializeProtosStruct -> DEBU 10e[0m Processing field: MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 10f[0m Proposed new policy Writers for Org17MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 110[0m Proposed new policy Admins for Org17MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 111[0m Proposed new policy Readers for Org17MSP
+[36m2017-05-04 19:42:42.944 UTC [common/config] NewStandardValues -> DEBU 112[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.944 UTC [common/config] initializeProtosStruct -> DEBU 113[0m Processing field: MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 114[0m Proposed new policy Readers for Org6MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 115[0m Proposed new policy Writers for Org6MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 116[0m Proposed new policy Admins for Org6MSP
+[36m2017-05-04 19:42:42.944 UTC [common/config] NewStandardValues -> DEBU 117[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.944 UTC [common/config] initializeProtosStruct -> DEBU 118[0m Processing field: MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 119[0m Proposed new policy Writers for Org29MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 11a[0m Proposed new policy Admins for Org29MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 11b[0m Proposed new policy Readers for Org29MSP
+[36m2017-05-04 19:42:42.944 UTC [common/config] NewStandardValues -> DEBU 11c[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.944 UTC [common/config] initializeProtosStruct -> DEBU 11d[0m Processing field: MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 11e[0m Proposed new policy Readers for Org15MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 11f[0m Proposed new policy Writers for Org15MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 120[0m Proposed new policy Admins for Org15MSP
+[36m2017-05-04 19:42:42.944 UTC [common/config] NewStandardValues -> DEBU 121[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.944 UTC [common/config] initializeProtosStruct -> DEBU 122[0m Processing field: MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 123[0m Proposed new policy Writers for Org25MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 124[0m Proposed new policy Admins for Org25MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 125[0m Proposed new policy Readers for Org25MSP
+[36m2017-05-04 19:42:42.944 UTC [common/config] NewStandardValues -> DEBU 126[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.944 UTC [common/config] initializeProtosStruct -> DEBU 127[0m Processing field: MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 128[0m Proposed new policy Readers for Org20MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 129[0m Proposed new policy Writers for Org20MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 12a[0m Proposed new policy Admins for Org20MSP
+[36m2017-05-04 19:42:42.944 UTC [common/config] NewStandardValues -> DEBU 12b[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.944 UTC [common/config] initializeProtosStruct -> DEBU 12c[0m Processing field: MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 12d[0m Proposed new policy Writers for Org28MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 12e[0m Proposed new policy Admins for Org28MSP
+[36m2017-05-04 19:42:42.944 UTC [policies] ProposePolicy -> DEBU 12f[0m Proposed new policy Readers for Org28MSP
+[36m2017-05-04 19:42:42.945 UTC [common/config] NewStandardValues -> DEBU 130[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.945 UTC [common/config] initializeProtosStruct -> DEBU 131[0m Processing field: MSP
+[36m2017-05-04 19:42:42.945 UTC [policies] ProposePolicy -> DEBU 132[0m Proposed new policy Readers for Org7MSP
+[36m2017-05-04 19:42:42.945 UTC [policies] ProposePolicy -> DEBU 133[0m Proposed new policy Writers for Org7MSP
+[36m2017-05-04 19:42:42.945 UTC [policies] ProposePolicy -> DEBU 134[0m Proposed new policy Admins for Org7MSP
+[36m2017-05-04 19:42:42.945 UTC [common/config] NewStandardValues -> DEBU 135[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.945 UTC [common/config] initializeProtosStruct -> DEBU 136[0m Processing field: MSP
+[36m2017-05-04 19:42:42.945 UTC [policies] ProposePolicy -> DEBU 137[0m Proposed new policy Readers for Org5MSP
+[36m2017-05-04 19:42:42.945 UTC [policies] ProposePolicy -> DEBU 138[0m Proposed new policy Writers for Org5MSP
+[36m2017-05-04 19:42:42.945 UTC [policies] ProposePolicy -> DEBU 139[0m Proposed new policy Admins for Org5MSP
+[36m2017-05-04 19:42:42.945 UTC [common/config] NewStandardValues -> DEBU 13a[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.945 UTC [common/config] initializeProtosStruct -> DEBU 13b[0m Processing field: MSP
+[36m2017-05-04 19:42:42.945 UTC [policies] ProposePolicy -> DEBU 13c[0m Proposed new policy Writers for Org18MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 13d[0m Proposed new policy Admins for Org18MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 13e[0m Proposed new policy Readers for Org18MSP
+[36m2017-05-04 19:42:42.946 UTC [common/config] NewStandardValues -> DEBU 13f[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.946 UTC [common/config] initializeProtosStruct -> DEBU 140[0m Processing field: MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 141[0m Proposed new policy Admins for Org30MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 142[0m Proposed new policy Readers for Org30MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 143[0m Proposed new policy Writers for Org30MSP
+[36m2017-05-04 19:42:42.946 UTC [common/config] NewStandardValues -> DEBU 144[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.946 UTC [common/config] initializeProtosStruct -> DEBU 145[0m Processing field: MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 146[0m Proposed new policy Readers for Org14MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 147[0m Proposed new policy Writers for Org14MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 148[0m Proposed new policy Admins for Org14MSP
+[36m2017-05-04 19:42:42.946 UTC [common/config] NewStandardValues -> DEBU 149[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.946 UTC [common/config] initializeProtosStruct -> DEBU 14a[0m Processing field: MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 14b[0m Proposed new policy Writers for Org13MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 14c[0m Proposed new policy Admins for Org13MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 14d[0m Proposed new policy Readers for Org13MSP
+[36m2017-05-04 19:42:42.946 UTC [common/config] NewStandardValues -> DEBU 14e[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.946 UTC [common/config] initializeProtosStruct -> DEBU 14f[0m Processing field: MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 150[0m Proposed new policy Writers for Org22MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 151[0m Proposed new policy Admins for Org22MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 152[0m Proposed new policy Readers for Org22MSP
+[36m2017-05-04 19:42:42.946 UTC [common/config] NewStandardValues -> DEBU 153[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.946 UTC [common/config] initializeProtosStruct -> DEBU 154[0m Processing field: MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 155[0m Proposed new policy Writers for Org16MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 156[0m Proposed new policy Admins for Org16MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 157[0m Proposed new policy Readers for Org16MSP
+[36m2017-05-04 19:42:42.946 UTC [common/config] NewStandardValues -> DEBU 158[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.946 UTC [common/config] initializeProtosStruct -> DEBU 159[0m Processing field: MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 15a[0m Proposed new policy Admins for Org3MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 15b[0m Proposed new policy Readers for Org3MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 15c[0m Proposed new policy Writers for Org3MSP
+[36m2017-05-04 19:42:42.946 UTC [common/config] NewStandardValues -> DEBU 15d[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.946 UTC [common/config] initializeProtosStruct -> DEBU 15e[0m Processing field: MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 15f[0m Proposed new policy Readers for Org26MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 160[0m Proposed new policy Writers for Org26MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 161[0m Proposed new policy Admins for Org26MSP
+[36m2017-05-04 19:42:42.946 UTC [common/config] NewStandardValues -> DEBU 162[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.946 UTC [common/config] initializeProtosStruct -> DEBU 163[0m Processing field: MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 164[0m Proposed new policy Readers for Org2MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 165[0m Proposed new policy Writers for Org2MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 166[0m Proposed new policy Admins for Org2MSP
+[36m2017-05-04 19:42:42.946 UTC [common/config] NewStandardValues -> DEBU 167[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.946 UTC [common/config] initializeProtosStruct -> DEBU 168[0m Processing field: MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 169[0m Proposed new policy Admins for Org23MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 16a[0m Proposed new policy Readers for Org23MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 16b[0m Proposed new policy Writers for Org23MSP
+[36m2017-05-04 19:42:42.946 UTC [common/config] NewStandardValues -> DEBU 16c[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.946 UTC [common/config] initializeProtosStruct -> DEBU 16d[0m Processing field: MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 16e[0m Proposed new policy Writers for Org19MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 16f[0m Proposed new policy Admins for Org19MSP
+[36m2017-05-04 19:42:42.946 UTC [policies] ProposePolicy -> DEBU 170[0m Proposed new policy Readers for Org19MSP
+[36m2017-05-04 19:42:42.947 UTC [common/config] NewStandardValues -> DEBU 171[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 172[0m Processing field: MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 173[0m Proposed new policy Admins for Org8MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 174[0m Proposed new policy Readers for Org8MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 175[0m Proposed new policy Writers for Org8MSP
+[36m2017-05-04 19:42:42.947 UTC [common/config] NewStandardValues -> DEBU 176[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 177[0m Processing field: MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 178[0m Proposed new policy Readers for Org21MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 179[0m Proposed new policy Writers for Org21MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 17a[0m Proposed new policy Admins for Org21MSP
+[36m2017-05-04 19:42:42.947 UTC [common/config] NewStandardValues -> DEBU 17b[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 17c[0m Processing field: MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 17d[0m Proposed new policy Readers for Org11MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 17e[0m Proposed new policy Writers for Org11MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 17f[0m Proposed new policy Admins for Org11MSP
+[36m2017-05-04 19:42:42.947 UTC [common/config] NewStandardValues -> DEBU 180[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 181[0m Processing field: MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 182[0m Proposed new policy Admins for Org32MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 183[0m Proposed new policy Readers for Org32MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 184[0m Proposed new policy Writers for Org32MSP
+[36m2017-05-04 19:42:42.947 UTC [common/config] NewStandardValues -> DEBU 185[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 186[0m Processing field: MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 187[0m Proposed new policy Readers for Org4MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 188[0m Proposed new policy Writers for Org4MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 189[0m Proposed new policy Admins for Org4MSP
+[36m2017-05-04 19:42:42.947 UTC [common/config] NewStandardValues -> DEBU 18a[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 18b[0m Processing field: MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 18c[0m Proposed new policy Readers for Org31MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 18d[0m Proposed new policy Writers for Org31MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 18e[0m Proposed new policy Admins for Org31MSP
+[36m2017-05-04 19:42:42.947 UTC [common/config] NewStandardValues -> DEBU 18f[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 190[0m Processing field: MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 191[0m Proposed new policy Admins for Org24MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 192[0m Proposed new policy Readers for Org24MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 193[0m Proposed new policy Writers for Org24MSP
+[36m2017-05-04 19:42:42.947 UTC [common/config] NewStandardValues -> DEBU 194[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 195[0m Processing field: MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 196[0m Proposed new policy Admins for Org9MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 197[0m Proposed new policy Readers for Org9MSP
+[36m2017-05-04 19:42:42.947 UTC [policies] ProposePolicy -> DEBU 198[0m Proposed new policy Writers for Org9MSP
+[36m2017-05-04 19:42:42.947 UTC [common/config] NewStandardValues -> DEBU 199[0m Initializing protos for *config.OrdererProtos
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 19a[0m Processing field: ConsensusType
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 19b[0m Processing field: BatchSize
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 19c[0m Processing field: BatchTimeout
+[36m2017-05-04 19:42:42.947 UTC [common/config] initializeProtosStruct -> DEBU 19d[0m Processing field: KafkaBrokers
+[36m2017-05-04 19:42:42.948 UTC [common/config] initializeProtosStruct -> DEBU 19e[0m Processing field: ChannelRestrictions
+[36m2017-05-04 19:42:42.948 UTC [policies] ProposePolicy -> DEBU 19f[0m Proposed new policy Admins for Orderer
+[36m2017-05-04 19:42:42.948 UTC [policies] ProposePolicy -> DEBU 1a0[0m Proposed new policy BlockValidation for Orderer
+[36m2017-05-04 19:42:42.948 UTC [policies] ProposePolicy -> DEBU 1a1[0m Proposed new policy Readers for Orderer
+[36m2017-05-04 19:42:42.948 UTC [policies] ProposePolicy -> DEBU 1a2[0m Proposed new policy Writers for Orderer
+[36m2017-05-04 19:42:42.948 UTC [common/config] NewStandardValues -> DEBU 1a3[0m Initializing protos for *config.OrganizationProtos
+[36m2017-05-04 19:42:42.948 UTC [common/config] initializeProtosStruct -> DEBU 1a4[0m Processing field: MSP
+[36m2017-05-04 19:42:42.948 UTC [policies] ProposePolicy -> DEBU 1a5[0m Proposed new policy Writers for OrdererOrg
+[36m2017-05-04 19:42:42.948 UTC [policies] ProposePolicy -> DEBU 1a6[0m Proposed new policy Admins for OrdererOrg
+[36m2017-05-04 19:42:42.948 UTC [policies] ProposePolicy -> DEBU 1a7[0m Proposed new policy Readers for OrdererOrg
+[36m2017-05-04 19:42:42.948 UTC [common/config] validateMSP -> DEBU 1a8[0m Setting up MSP for org Org12MSP
+[36m2017-05-04 19:42:42.948 UTC [msp] NewBccspMsp -> DEBU 1a9[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.948 UTC [msp] Setup -> DEBU 1aa[0m Setting up MSP instance Org12MSP
+[36m2017-05-04 19:42:42.948 UTC [msp] newIdentity -> DEBU 1ab[0m Creating identity instance for ID &{Org12MSP 6351317f3d9f4963e211587084686affd7ea96af8462c4ada1cebc7278fa6446}
+[36m2017-05-04 19:42:42.948 UTC [msp] newIdentity -> DEBU 1ac[0m Creating identity instance for ID &{Org12MSP 10faa3e5aff63c743fdaf123ddc80e0b5f1bdf616162a74d68c964547c105dd1}
+[36m2017-05-04 19:42:42.948 UTC [common/config] validateMSP -> DEBU 1ad[0m Setting up MSP for org Org1MSP
+[36m2017-05-04 19:42:42.948 UTC [msp] NewBccspMsp -> DEBU 1ae[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.948 UTC [msp] Setup -> DEBU 1af[0m Setting up MSP instance Org1MSP
+[36m2017-05-04 19:42:42.948 UTC [msp] newIdentity -> DEBU 1b0[0m Creating identity instance for ID &{Org1MSP da7cfdc1e55fab7cb4d4edc0e8b905d299c15e17367354c33b5fe1882a381628}
+[36m2017-05-04 19:42:42.948 UTC [msp] newIdentity -> DEBU 1b1[0m Creating identity instance for ID &{Org1MSP fa31050f42e1c0e9878c95fc9bcc97d3bf0a69967263022ac85e8e1f359e3c1c}
+[36m2017-05-04 19:42:42.948 UTC [common/config] validateMSP -> DEBU 1b2[0m Setting up MSP for org Org10MSP
+[36m2017-05-04 19:42:42.948 UTC [msp] NewBccspMsp -> DEBU 1b3[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.948 UTC [msp] Setup -> DEBU 1b4[0m Setting up MSP instance Org10MSP
+[36m2017-05-04 19:42:42.949 UTC [msp] newIdentity -> DEBU 1b5[0m Creating identity instance for ID &{Org10MSP a0cd2bd9ba6023bec41b2446cfc73807e7470953d532beaaeddccefc34c04fce}
+[36m2017-05-04 19:42:42.949 UTC [msp] newIdentity -> DEBU 1b6[0m Creating identity instance for ID &{Org10MSP b68fb35e7e01011de8fc0707e89a181d3325fb18dbc43ee9ff70920381b76375}
+[36m2017-05-04 19:42:42.949 UTC [common/config] validateMSP -> DEBU 1b7[0m Setting up MSP for org Org27MSP
+[36m2017-05-04 19:42:42.949 UTC [msp] NewBccspMsp -> DEBU 1b8[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.949 UTC [msp] Setup -> DEBU 1b9[0m Setting up MSP instance Org27MSP
+[36m2017-05-04 19:42:42.949 UTC [msp] newIdentity -> DEBU 1ba[0m Creating identity instance for ID &{Org27MSP 6d2f29d25b1c1deb1411863f92a353457d1366aaba82285e0ff1235ee89dfab0}
+[36m2017-05-04 19:42:42.949 UTC [msp] newIdentity -> DEBU 1bb[0m Creating identity instance for ID &{Org27MSP 2341cded667031084c3f2892d1184c7c26bf3eed1746ddded47f92113fb5471c}
+[36m2017-05-04 19:42:42.949 UTC [common/config] validateMSP -> DEBU 1bc[0m Setting up MSP for org Org17MSP
+[36m2017-05-04 19:42:42.949 UTC [msp] NewBccspMsp -> DEBU 1bd[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.949 UTC [msp] Setup -> DEBU 1be[0m Setting up MSP instance Org17MSP
+[36m2017-05-04 19:42:42.949 UTC [msp] newIdentity -> DEBU 1bf[0m Creating identity instance for ID &{Org17MSP dcecd25857a034207a5cd3ebe9cbcae0fbace55eced3e94a46057b70f93e5b2f}
+[36m2017-05-04 19:42:42.949 UTC [msp] newIdentity -> DEBU 1c0[0m Creating identity instance for ID &{Org17MSP 5ccfca56ea4bf66acd58de63241607d85ff848546c0df7e0d3eb58970244c36f}
+[36m2017-05-04 19:42:42.949 UTC [common/config] validateMSP -> DEBU 1c1[0m Setting up MSP for org Org6MSP
+[36m2017-05-04 19:42:42.949 UTC [msp] NewBccspMsp -> DEBU 1c2[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.949 UTC [msp] Setup -> DEBU 1c3[0m Setting up MSP instance Org6MSP
+[36m2017-05-04 19:42:42.950 UTC [msp] newIdentity -> DEBU 1c4[0m Creating identity instance for ID &{Org6MSP 628f9ed622597d4ed36e20d7e509cf3b376f87c85eb677ddd48637ef8164354c}
+[36m2017-05-04 19:42:42.950 UTC [msp] newIdentity -> DEBU 1c5[0m Creating identity instance for ID &{Org6MSP 766fe8d434782f6796e936b258591cee93d47af546083e38fb3b88604ed8c267}
+[36m2017-05-04 19:42:42.950 UTC [common/config] validateMSP -> DEBU 1c6[0m Setting up MSP for org Org29MSP
+[36m2017-05-04 19:42:42.950 UTC [msp] NewBccspMsp -> DEBU 1c7[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.950 UTC [msp] Setup -> DEBU 1c8[0m Setting up MSP instance Org29MSP
+[36m2017-05-04 19:42:42.950 UTC [msp] newIdentity -> DEBU 1c9[0m Creating identity instance for ID &{Org29MSP be38fe50cd91fe1b9188d484187a6f157af3c2cc84de001eb88ccc22f7a5007f}
+[36m2017-05-04 19:42:42.950 UTC [msp] newIdentity -> DEBU 1ca[0m Creating identity instance for ID &{Org29MSP 7735121bf2150a5fcdd723b037b8b4cc37cf9ab2bfa89a47199489ffe757fe3b}
+[36m2017-05-04 19:42:42.950 UTC [common/config] validateMSP -> DEBU 1cb[0m Setting up MSP for org Org15MSP
+[36m2017-05-04 19:42:42.950 UTC [msp] NewBccspMsp -> DEBU 1cc[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.950 UTC [msp] Setup -> DEBU 1cd[0m Setting up MSP instance Org15MSP
+[36m2017-05-04 19:42:42.950 UTC [msp] newIdentity -> DEBU 1ce[0m Creating identity instance for ID &{Org15MSP 42c6f9cb7928529ac496a70f710a7268c2f6ace718e2d7f6b0589b628b8afef9}
+[36m2017-05-04 19:42:42.950 UTC [msp] newIdentity -> DEBU 1cf[0m Creating identity instance for ID &{Org15MSP f1bea13a01eac8a12cfabc08f6f14c3845825f2cec0f466c28f73140cbdf9b96}
+[36m2017-05-04 19:42:42.950 UTC [common/config] validateMSP -> DEBU 1d0[0m Setting up MSP for org Org25MSP
+[36m2017-05-04 19:42:42.950 UTC [msp] NewBccspMsp -> DEBU 1d1[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.950 UTC [msp] Setup -> DEBU 1d2[0m Setting up MSP instance Org25MSP
+[36m2017-05-04 19:42:42.951 UTC [msp] newIdentity -> DEBU 1d3[0m Creating identity instance for ID &{Org25MSP ba5991327a32371860994181a148e4cdf6859b2a88a667bd34a1206d655d775a}
+[36m2017-05-04 19:42:42.951 UTC [msp] newIdentity -> DEBU 1d4[0m Creating identity instance for ID &{Org25MSP f513428b9908549431045417dc16c82d2c543f6702c082f5968ce76612f7f878}
+[36m2017-05-04 19:42:42.951 UTC [common/config] validateMSP -> DEBU 1d5[0m Setting up MSP for org Org20MSP
+[36m2017-05-04 19:42:42.951 UTC [msp] NewBccspMsp -> DEBU 1d6[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.951 UTC [msp] Setup -> DEBU 1d7[0m Setting up MSP instance Org20MSP
+[36m2017-05-04 19:42:42.951 UTC [msp] newIdentity -> DEBU 1d8[0m Creating identity instance for ID &{Org20MSP 1360665ef014a8dbc8ae8f4e43fc9498a7c282c0ada6c554ea9ec21b85b0152b}
+[36m2017-05-04 19:42:42.951 UTC [msp] newIdentity -> DEBU 1d9[0m Creating identity instance for ID &{Org20MSP 82b178b53e082fd188c5f712fbdf76a1257cb0ac333c22581e3fac809c4ca67e}
+[36m2017-05-04 19:42:42.951 UTC [common/config] validateMSP -> DEBU 1da[0m Setting up MSP for org Org28MSP
+[36m2017-05-04 19:42:42.951 UTC [msp] NewBccspMsp -> DEBU 1db[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.951 UTC [msp] Setup -> DEBU 1dc[0m Setting up MSP instance Org28MSP
+[36m2017-05-04 19:42:42.951 UTC [msp] newIdentity -> DEBU 1dd[0m Creating identity instance for ID &{Org28MSP e7562ec53a06692c8c562094959d78d237ee7b9f4258f9f36090e925b9aad3e1}
+[36m2017-05-04 19:42:42.951 UTC [msp] newIdentity -> DEBU 1de[0m Creating identity instance for ID &{Org28MSP 9128967ff412beeeefa2247e65b5269d33014cd49b10e04e47a8e179e6e33170}
+[36m2017-05-04 19:42:42.951 UTC [common/config] validateMSP -> DEBU 1df[0m Setting up MSP for org Org7MSP
+[36m2017-05-04 19:42:42.951 UTC [msp] NewBccspMsp -> DEBU 1e0[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.951 UTC [msp] Setup -> DEBU 1e1[0m Setting up MSP instance Org7MSP
+[36m2017-05-04 19:42:42.951 UTC [msp] newIdentity -> DEBU 1e2[0m Creating identity instance for ID &{Org7MSP abd94d06bdf59e2066ef0e76e5c4aeb760603e4b4d24df27535404a8ff7d7d27}
+[36m2017-05-04 19:42:42.952 UTC [msp] newIdentity -> DEBU 1e3[0m Creating identity instance for ID &{Org7MSP f81449ddc790e80f4d5e4c6efadde6160ddb666200b24a454bf51ab02c2668c3}
+[36m2017-05-04 19:42:42.952 UTC [common/config] validateMSP -> DEBU 1e4[0m Setting up MSP for org Org5MSP
+[36m2017-05-04 19:42:42.952 UTC [msp] NewBccspMsp -> DEBU 1e5[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.952 UTC [msp] Setup -> DEBU 1e6[0m Setting up MSP instance Org5MSP
+[36m2017-05-04 19:42:42.952 UTC [msp] newIdentity -> DEBU 1e7[0m Creating identity instance for ID &{Org5MSP ab909003ecb459384d8919bfd44872e4092ef78734bf7e424100162b33be5f12}
+[36m2017-05-04 19:42:42.952 UTC [msp] newIdentity -> DEBU 1e8[0m Creating identity instance for ID &{Org5MSP d2acf319601ce9a3a2ffd2ff17dd3a8fc1da8c79859cd5d7bc0ae88622316098}
+[36m2017-05-04 19:42:42.952 UTC [common/config] validateMSP -> DEBU 1e9[0m Setting up MSP for org Org18MSP
+[36m2017-05-04 19:42:42.952 UTC [msp] NewBccspMsp -> DEBU 1ea[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.952 UTC [msp] Setup -> DEBU 1eb[0m Setting up MSP instance Org18MSP
+[36m2017-05-04 19:42:42.952 UTC [msp] newIdentity -> DEBU 1ec[0m Creating identity instance for ID &{Org18MSP ca71ee774219139b63e7ec274d8866afaf92d7332e38d396814955f4dcc1f26c}
+[36m2017-05-04 19:42:42.952 UTC [msp] newIdentity -> DEBU 1ed[0m Creating identity instance for ID &{Org18MSP 4f68fdd9e355c08b0ad7f672d16e9e7ce2253421b04a9c2148b7dbe76a04fb4f}
+[36m2017-05-04 19:42:42.952 UTC [common/config] validateMSP -> DEBU 1ee[0m Setting up MSP for org Org30MSP
+[36m2017-05-04 19:42:42.952 UTC [msp] NewBccspMsp -> DEBU 1ef[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.952 UTC [msp] Setup -> DEBU 1f0[0m Setting up MSP instance Org30MSP
+[36m2017-05-04 19:42:42.952 UTC [msp] newIdentity -> DEBU 1f1[0m Creating identity instance for ID &{Org30MSP 4e5fa0231adea52ffc8728028ab092c3e6010af2d5c25357d7fec8b536433a84}
+[36m2017-05-04 19:42:42.952 UTC [msp] newIdentity -> DEBU 1f2[0m Creating identity instance for ID &{Org30MSP 38b30ba4a3e18755cafc96099c97aa7168dd07e735e373622502997d8b0e76d6}
+[36m2017-05-04 19:42:42.953 UTC [common/config] validateMSP -> DEBU 1f3[0m Setting up MSP for org Org14MSP
+[36m2017-05-04 19:42:42.953 UTC [msp] NewBccspMsp -> DEBU 1f4[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.953 UTC [msp] Setup -> DEBU 1f5[0m Setting up MSP instance Org14MSP
+[36m2017-05-04 19:42:42.953 UTC [msp] newIdentity -> DEBU 1f6[0m Creating identity instance for ID &{Org14MSP 95c09ed13a9700c4d4dc95e8d20e4aaccec14eea29ae13bfb620aca6dcc323f6}
+[36m2017-05-04 19:42:42.953 UTC [msp] newIdentity -> DEBU 1f7[0m Creating identity instance for ID &{Org14MSP 6bd53f8be683dede25d44dcc615fed62015039634d1c009223befaa1ebcf4fd1}
+[36m2017-05-04 19:42:42.953 UTC [common/config] validateMSP -> DEBU 1f8[0m Setting up MSP for org Org13MSP
+[36m2017-05-04 19:42:42.953 UTC [msp] NewBccspMsp -> DEBU 1f9[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.953 UTC [msp] Setup -> DEBU 1fa[0m Setting up MSP instance Org13MSP
+[36m2017-05-04 19:42:42.953 UTC [msp] newIdentity -> DEBU 1fb[0m Creating identity instance for ID &{Org13MSP 1ca9d23807c8dee7834d26bc8ba112da39bb93279f82341270e478da2678f68e}
+[36m2017-05-04 19:42:42.953 UTC [msp] newIdentity -> DEBU 1fc[0m Creating identity instance for ID &{Org13MSP 506df0c4a7870fafc80494572b1cc9f4a45a246d61bced7b496637e1cc456850}
+[36m2017-05-04 19:42:42.953 UTC [common/config] validateMSP -> DEBU 1fd[0m Setting up MSP for org Org22MSP
+[36m2017-05-04 19:42:42.953 UTC [msp] NewBccspMsp -> DEBU 1fe[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.953 UTC [msp] Setup -> DEBU 1ff[0m Setting up MSP instance Org22MSP
+[36m2017-05-04 19:42:42.953 UTC [msp] newIdentity -> DEBU 200[0m Creating identity instance for ID &{Org22MSP 93dd81787b5aa623c44cd5c604e70e3d0a4f36ddb946be161f1d7a749a3cc69e}
+[36m2017-05-04 19:42:42.954 UTC [msp] newIdentity -> DEBU 201[0m Creating identity instance for ID &{Org22MSP 3baee344187e5672beab3de800cd2257c3ff062d68a5bfa2b00025849887b0ce}
+[36m2017-05-04 19:42:42.954 UTC [common/config] validateMSP -> DEBU 202[0m Setting up MSP for org Org16MSP
+[36m2017-05-04 19:42:42.954 UTC [msp] NewBccspMsp -> DEBU 203[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.954 UTC [msp] Setup -> DEBU 204[0m Setting up MSP instance Org16MSP
+[36m2017-05-04 19:42:42.954 UTC [msp] newIdentity -> DEBU 205[0m Creating identity instance for ID &{Org16MSP e54e31b2c6403fd4be3de094be185c0671d3fa00778cdc2fb29799eabcb63311}
+[36m2017-05-04 19:42:42.954 UTC [msp] newIdentity -> DEBU 206[0m Creating identity instance for ID &{Org16MSP dcaf59fac386686719910469f0aa7734cef0118b8f474ebcbc85b825c1733827}
+[36m2017-05-04 19:42:42.954 UTC [common/config] validateMSP -> DEBU 207[0m Setting up MSP for org Org3MSP
+[36m2017-05-04 19:42:42.954 UTC [msp] NewBccspMsp -> DEBU 208[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.954 UTC [msp] Setup -> DEBU 209[0m Setting up MSP instance Org3MSP
+[36m2017-05-04 19:42:42.954 UTC [msp] newIdentity -> DEBU 20a[0m Creating identity instance for ID &{Org3MSP d4a4fccefa5b396ea1f0356a6ffb63d7cd5aa3812dfbbd233030c3e931ab2361}
+[36m2017-05-04 19:42:42.954 UTC [msp] newIdentity -> DEBU 20b[0m Creating identity instance for ID &{Org3MSP 273e39b35485d8a9f0be04d6b7426c2ec5b087092fa92cd0444815b1a340cb25}
+[36m2017-05-04 19:42:42.954 UTC [common/config] validateMSP -> DEBU 20c[0m Setting up MSP for org Org26MSP
+[36m2017-05-04 19:42:42.954 UTC [msp] NewBccspMsp -> DEBU 20d[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.954 UTC [msp] Setup -> DEBU 20e[0m Setting up MSP instance Org26MSP
+[36m2017-05-04 19:42:42.954 UTC [msp] newIdentity -> DEBU 20f[0m Creating identity instance for ID &{Org26MSP 3cc67959360b3528a83ed1e0abe478f1ecd1ac733d45902bc1e96f4af313b365}
+[36m2017-05-04 19:42:42.955 UTC [msp] newIdentity -> DEBU 210[0m Creating identity instance for ID &{Org26MSP 28c3b3c85c7378a9016adb71d33dbade6bc5513c77c6f0edf6b40a31faa10f8d}
+[36m2017-05-04 19:42:42.955 UTC [common/config] validateMSP -> DEBU 211[0m Setting up MSP for org Org2MSP
+[36m2017-05-04 19:42:42.955 UTC [msp] NewBccspMsp -> DEBU 212[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.955 UTC [msp] Setup -> DEBU 213[0m Setting up MSP instance Org2MSP
+[36m2017-05-04 19:42:42.955 UTC [msp] newIdentity -> DEBU 214[0m Creating identity instance for ID &{Org2MSP 730962b3fdff91c2a42ce6191b55efb88d242631683ec534cc0ac8fc9035d043}
+[36m2017-05-04 19:42:42.955 UTC [msp] newIdentity -> DEBU 215[0m Creating identity instance for ID &{Org2MSP c687a47de9a8cc7ffb860eda24a3367e47653f96cba51c477716869ac88fab97}
+[36m2017-05-04 19:42:42.955 UTC [common/config] validateMSP -> DEBU 216[0m Setting up MSP for org Org23MSP
+[36m2017-05-04 19:42:42.955 UTC [msp] NewBccspMsp -> DEBU 217[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.955 UTC [msp] Setup -> DEBU 218[0m Setting up MSP instance Org23MSP
+[36m2017-05-04 19:42:42.955 UTC [msp] newIdentity -> DEBU 219[0m Creating identity instance for ID &{Org23MSP 7bc4b5d4b65c2196a76459cdbf543090f5da9b65b528a855a7825998db500f20}
+[36m2017-05-04 19:42:42.955 UTC [msp] newIdentity -> DEBU 21a[0m Creating identity instance for ID &{Org23MSP d5698f0f6265ddabebec6143ef47081e44dff50f42707fe371e1fa196b810316}
+[36m2017-05-04 19:42:42.955 UTC [common/config] validateMSP -> DEBU 21b[0m Setting up MSP for org Org19MSP
+[36m2017-05-04 19:42:42.955 UTC [msp] NewBccspMsp -> DEBU 21c[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.955 UTC [msp] Setup -> DEBU 21d[0m Setting up MSP instance Org19MSP
+[36m2017-05-04 19:42:42.955 UTC [msp] newIdentity -> DEBU 21e[0m Creating identity instance for ID &{Org19MSP 6db47d2d3f52501e1a69046eaa5521a12e2d2963560ba1a7c11052b96b0b7623}
+[36m2017-05-04 19:42:42.956 UTC [msp] newIdentity -> DEBU 21f[0m Creating identity instance for ID &{Org19MSP 860e341fd531fa5a57cfe0780934132d5c75f44f614193903a67b11509efafd2}
+[36m2017-05-04 19:42:42.956 UTC [common/config] validateMSP -> DEBU 220[0m Setting up MSP for org Org8MSP
+[36m2017-05-04 19:42:42.956 UTC [msp] NewBccspMsp -> DEBU 221[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.956 UTC [msp] Setup -> DEBU 222[0m Setting up MSP instance Org8MSP
+[36m2017-05-04 19:42:42.956 UTC [msp] newIdentity -> DEBU 223[0m Creating identity instance for ID &{Org8MSP 64073f47373a084afa25ef3d187c2695cab9f9ae68fab0ea705caff722e06638}
+[36m2017-05-04 19:42:42.956 UTC [msp] newIdentity -> DEBU 224[0m Creating identity instance for ID &{Org8MSP 04c1110b0f6161f98916b922989acc4e7e4f913943fa350f70a9463f93018c0e}
+[36m2017-05-04 19:42:42.956 UTC [common/config] validateMSP -> DEBU 225[0m Setting up MSP for org Org21MSP
+[36m2017-05-04 19:42:42.956 UTC [msp] NewBccspMsp -> DEBU 226[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.956 UTC [msp] Setup -> DEBU 227[0m Setting up MSP instance Org21MSP
+[36m2017-05-04 19:42:42.956 UTC [msp] newIdentity -> DEBU 228[0m Creating identity instance for ID &{Org21MSP 04da81569f0fb708881d21cef89573097509cef17300de4a4bbc0733fcb1fabd}
+[36m2017-05-04 19:42:42.956 UTC [msp] newIdentity -> DEBU 229[0m Creating identity instance for ID &{Org21MSP b2d43793e5e39e2858da833758e2dc92d7b2cd16041b9b923489c229616fb0e5}
+[36m2017-05-04 19:42:42.956 UTC [common/config] validateMSP -> DEBU 22a[0m Setting up MSP for org Org11MSP
+[36m2017-05-04 19:42:42.956 UTC [msp] NewBccspMsp -> DEBU 22b[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.956 UTC [msp] Setup -> DEBU 22c[0m Setting up MSP instance Org11MSP
+[36m2017-05-04 19:42:42.957 UTC [msp] newIdentity -> DEBU 22d[0m Creating identity instance for ID &{Org11MSP 3a280a3ae72276de4923c1ce718becd3eae45b6fcf8cddf0e17c77b94bdbf7c8}
+[36m2017-05-04 19:42:42.957 UTC [msp] newIdentity -> DEBU 22e[0m Creating identity instance for ID &{Org11MSP 8f67af7783430c7d6443c0d4cc5dfb3951cfb463bedce1e8db11910abc6afcb4}
+[36m2017-05-04 19:42:42.957 UTC [common/config] validateMSP -> DEBU 22f[0m Setting up MSP for org Org32MSP
+[36m2017-05-04 19:42:42.957 UTC [msp] NewBccspMsp -> DEBU 230[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.957 UTC [msp] Setup -> DEBU 231[0m Setting up MSP instance Org32MSP
+[36m2017-05-04 19:42:42.957 UTC [msp] newIdentity -> DEBU 232[0m Creating identity instance for ID &{Org32MSP cf0df526878a9f43c5917217a6daea26f568f6d2df376d5ebe1d9a85180c8f25}
+[36m2017-05-04 19:42:42.957 UTC [msp] newIdentity -> DEBU 233[0m Creating identity instance for ID &{Org32MSP 5aae154c718e84b0f8cc63e2f40366390788fe4a51e2ec3f4ef9b219bf0b420b}
+[36m2017-05-04 19:42:42.957 UTC [common/config] validateMSP -> DEBU 234[0m Setting up MSP for org Org4MSP
+[36m2017-05-04 19:42:42.957 UTC [msp] NewBccspMsp -> DEBU 235[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.957 UTC [msp] Setup -> DEBU 236[0m Setting up MSP instance Org4MSP
+[36m2017-05-04 19:42:42.958 UTC [msp] newIdentity -> DEBU 237[0m Creating identity instance for ID &{Org4MSP 7ea799c3821f36a3e4dcbb76de1697525a22eb16a43970a99a10b3c3eedafd31}
+[36m2017-05-04 19:42:42.960 UTC [msp] newIdentity -> DEBU 238[0m Creating identity instance for ID &{Org4MSP 8e221459c592f8e88e5330716afac037d31581c3de3ba1b15c223a0eb83ba03e}
+[36m2017-05-04 19:42:42.960 UTC [common/config] validateMSP -> DEBU 239[0m Setting up MSP for org Org31MSP
+[36m2017-05-04 19:42:42.960 UTC [msp] NewBccspMsp -> DEBU 23a[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.960 UTC [msp] Setup -> DEBU 23b[0m Setting up MSP instance Org31MSP
+[36m2017-05-04 19:42:42.960 UTC [msp] newIdentity -> DEBU 23c[0m Creating identity instance for ID &{Org31MSP 257e7b2298120ed77e24950a23d9fc501a8e0c12d09c05093371a2e31c672c56}
+[36m2017-05-04 19:42:42.960 UTC [msp] newIdentity -> DEBU 23d[0m Creating identity instance for ID &{Org31MSP 7713d9af2242c67ece625d8a9f646bfd15d6bf8cf0001a69099334dc26bebf14}
+[36m2017-05-04 19:42:42.961 UTC [common/config] validateMSP -> DEBU 23e[0m Setting up MSP for org Org24MSP
+[36m2017-05-04 19:42:42.961 UTC [msp] NewBccspMsp -> DEBU 23f[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.961 UTC [msp] Setup -> DEBU 240[0m Setting up MSP instance Org24MSP
+[36m2017-05-04 19:42:42.961 UTC [msp] newIdentity -> DEBU 241[0m Creating identity instance for ID &{Org24MSP 0a9ed114569fbcb9884bcd6b86cec55d2362d317442875a639d48f568d82ed4d}
+[36m2017-05-04 19:42:42.961 UTC [msp] newIdentity -> DEBU 242[0m Creating identity instance for ID &{Org24MSP 8160d6d892133ceae21825a1461225bd745a0b93c14c9c744119202852ce888c}
+[36m2017-05-04 19:42:42.961 UTC [common/config] validateMSP -> DEBU 243[0m Setting up MSP for org Org9MSP
+[36m2017-05-04 19:42:42.961 UTC [msp] NewBccspMsp -> DEBU 244[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.961 UTC [msp] Setup -> DEBU 245[0m Setting up MSP instance Org9MSP
+[36m2017-05-04 19:42:42.961 UTC [msp] newIdentity -> DEBU 246[0m Creating identity instance for ID &{Org9MSP a4368f337304365eadcadf1c199556322fecaecabbe7aa5de14e582e0921b389}
+[36m2017-05-04 19:42:42.962 UTC [msp] newIdentity -> DEBU 247[0m Creating identity instance for ID &{Org9MSP 16922bcc711cf858357e8dc4efa6fc9453fac0b2d49d28a85c211984e4fb64dd}
+[36m2017-05-04 19:42:42.962 UTC [msp] Setup -> DEBU 248[0m Setting up the MSP manager (32 msps)
+[36m2017-05-04 19:42:42.962 UTC [msp] Setup -> DEBU 249[0m MSP manager setup complete, setup 32 msps
+[36m2017-05-04 19:42:42.962 UTC [common/config] validateMSP -> DEBU 24a[0m Setting up MSP for org OrdererOrg
+[36m2017-05-04 19:42:42.962 UTC [msp] NewBccspMsp -> DEBU 24b[0m Creating BCCSP-based MSP instance
+[36m2017-05-04 19:42:42.962 UTC [msp] Setup -> DEBU 24c[0m Setting up MSP instance OrdererMSP
+[36m2017-05-04 19:42:42.962 UTC [msp] newIdentity -> DEBU 24d[0m Creating identity instance for ID &{OrdererMSP 6a25de4d86306141b313df662f539ebfaa238f6ddd68981cfcab099762839e9b}
+[36m2017-05-04 19:42:42.962 UTC [msp] newIdentity -> DEBU 24e[0m Creating identity instance for ID &{OrdererMSP d6d2ae055df56f4a624b906daab414fbbce1a973cf716026577c3308b85df8b3}
+[36m2017-05-04 19:42:42.962 UTC [msp] Setup -> DEBU 24f[0m Setting up the MSP manager (1 msps)
+[36m2017-05-04 19:42:42.962 UTC [msp] Setup -> DEBU 250[0m MSP manager setup complete, setup 1 msps
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 251[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 252[0m In commit adding relative sub-policy Org18MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 253[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 254[0m In commit adding relative sub-policy Org18MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 255[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 256[0m In commit adding relative sub-policy Org18MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 257[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 258[0m In commit adding relative sub-policy Org29MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 259[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 25a[0m In commit adding relative sub-policy Org29MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 25b[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 25c[0m In commit adding relative sub-policy Org29MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 25d[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 25e[0m In commit adding relative sub-policy Org23MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 25f[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 260[0m In commit adding relative sub-policy Org23MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 261[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 262[0m In commit adding relative sub-policy Org23MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 263[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 264[0m In commit adding relative sub-policy Org32MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 265[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.963 UTC [policies] CommitProposals -> DEBU 266[0m In commit adding relative sub-policy Org32MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.963 UTC [policies] GetPolicy -> DEBU 267[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 268[0m In commit adding relative sub-policy Org32MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 269[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 26a[0m In commit adding relative sub-policy Org31MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 26b[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 26c[0m In commit adding relative sub-policy Org31MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 26d[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 26e[0m In commit adding relative sub-policy Org31MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 26f[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 270[0m In commit adding relative sub-policy Org24MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 271[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 272[0m In commit adding relative sub-policy Org24MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 273[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 274[0m In commit adding relative sub-policy Org24MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 275[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 276[0m In commit adding relative sub-policy Org1MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 277[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 278[0m In commit adding relative sub-policy Org1MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 279[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 27a[0m In commit adding relative sub-policy Org1MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 27b[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 27c[0m In commit adding relative sub-policy Org25MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 27d[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.964 UTC [policies] CommitProposals -> DEBU 27e[0m In commit adding relative sub-policy Org25MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.964 UTC [policies] GetPolicy -> DEBU 27f[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 280[0m In commit adding relative sub-policy Org25MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 281[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 282[0m In commit adding relative sub-policy Org30MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 283[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 284[0m In commit adding relative sub-policy Org30MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 285[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 286[0m In commit adding relative sub-policy Org30MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 287[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 288[0m In commit adding relative sub-policy Org3MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 289[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 28a[0m In commit adding relative sub-policy Org3MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 28b[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 28c[0m In commit adding relative sub-policy Org3MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 28d[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 28e[0m In commit adding relative sub-policy Org26MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 28f[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 290[0m In commit adding relative sub-policy Org26MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 291[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 292[0m In commit adding relative sub-policy Org26MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 293[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 294[0m In commit adding relative sub-policy Org21MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 295[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 296[0m In commit adding relative sub-policy Org21MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 297[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 298[0m In commit adding relative sub-policy Org21MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 299[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 29a[0m In commit adding relative sub-policy Org11MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 29b[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 29c[0m In commit adding relative sub-policy Org11MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 29d[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 29e[0m In commit adding relative sub-policy Org11MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 29f[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 2a0[0m In commit adding relative sub-policy Org9MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 2a1[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 2a2[0m In commit adding relative sub-policy Org9MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 2a3[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 2a4[0m In commit adding relative sub-policy Org9MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 2a5[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 2a6[0m In commit adding relative sub-policy Org12MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 2a7[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 2a8[0m In commit adding relative sub-policy Org12MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 2a9[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 2aa[0m In commit adding relative sub-policy Org12MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 2ab[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.965 UTC [policies] CommitProposals -> DEBU 2ac[0m In commit adding relative sub-policy Org6MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.965 UTC [policies] GetPolicy -> DEBU 2ad[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2ae[0m In commit adding relative sub-policy Org6MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2af[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2b0[0m In commit adding relative sub-policy Org6MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2b1[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2b2[0m In commit adding relative sub-policy Org13MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2b3[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2b4[0m In commit adding relative sub-policy Org13MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2b5[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2b6[0m In commit adding relative sub-policy Org13MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2b7[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2b8[0m In commit adding relative sub-policy Org16MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2b9[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2ba[0m In commit adding relative sub-policy Org16MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2bb[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2bc[0m In commit adding relative sub-policy Org16MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2bd[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2be[0m In commit adding relative sub-policy Org5MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2bf[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2c0[0m In commit adding relative sub-policy Org5MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2c1[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2c2[0m In commit adding relative sub-policy Org5MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2c3[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2c4[0m In commit adding relative sub-policy Org22MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2c5[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2c6[0m In commit adding relative sub-policy Org22MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2c7[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2c8[0m In commit adding relative sub-policy Org22MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2c9[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2ca[0m In commit adding relative sub-policy Org14MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2cb[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2cc[0m In commit adding relative sub-policy Org14MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2cd[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2ce[0m In commit adding relative sub-policy Org14MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2cf[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2d0[0m In commit adding relative sub-policy Org2MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2d1[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2d2[0m In commit adding relative sub-policy Org2MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2d3[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2d4[0m In commit adding relative sub-policy Org2MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2d5[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2d6[0m In commit adding relative sub-policy Org8MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2d7[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2d8[0m In commit adding relative sub-policy Org8MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2d9[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2da[0m In commit adding relative sub-policy Org8MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2db[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2dc[0m In commit adding relative sub-policy Org10MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2dd[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2de[0m In commit adding relative sub-policy Org10MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2df[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2e0[0m In commit adding relative sub-policy Org10MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2e1[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2e2[0m In commit adding relative sub-policy Org17MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2e3[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2e4[0m In commit adding relative sub-policy Org17MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2e5[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2e6[0m In commit adding relative sub-policy Org17MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2e7[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2e8[0m In commit adding relative sub-policy Org15MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2e9[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2ea[0m In commit adding relative sub-policy Org15MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2eb[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2ec[0m In commit adding relative sub-policy Org15MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2ed[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2ee[0m In commit adding relative sub-policy Org28MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2ef[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2f0[0m In commit adding relative sub-policy Org28MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2f1[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2f2[0m In commit adding relative sub-policy Org28MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2f3[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2f4[0m In commit adding relative sub-policy Org4MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2f5[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2f6[0m In commit adding relative sub-policy Org4MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2f7[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2f8[0m In commit adding relative sub-policy Org4MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2f9[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2fa[0m In commit adding relative sub-policy Org27MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2fb[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2fc[0m In commit adding relative sub-policy Org27MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2fd[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 2fe[0m In commit adding relative sub-policy Org27MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.966 UTC [policies] GetPolicy -> DEBU 2ff[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.966 UTC [policies] CommitProposals -> DEBU 300[0m In commit adding relative sub-policy Org20MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 301[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 302[0m In commit adding relative sub-policy Org20MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 303[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 304[0m In commit adding relative sub-policy Org20MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 305[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 306[0m In commit adding relative sub-policy Org7MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 307[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 308[0m In commit adding relative sub-policy Org7MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 309[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 30a[0m In commit adding relative sub-policy Org7MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 30b[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 30c[0m In commit adding relative sub-policy Org19MSP/Readers to SampleConsortium
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 30d[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 30e[0m In commit adding relative sub-policy Org19MSP/Writers to SampleConsortium
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 30f[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 310[0m In commit adding relative sub-policy Org19MSP/Admins to SampleConsortium
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 311[0m Returning policy Org18MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 312[0m In commit adding relative sub-policy SampleConsortium/Org18MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 313[0m Returning policy Org24MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 314[0m In commit adding relative sub-policy SampleConsortium/Org24MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 315[0m Returning policy Org26MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 316[0m In commit adding relative sub-policy SampleConsortium/Org26MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 317[0m Returning policy Org16MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 318[0m In commit adding relative sub-policy SampleConsortium/Org16MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 319[0m Returning policy Org22MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 31a[0m In commit adding relative sub-policy SampleConsortium/Org22MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 31b[0m Returning policy Org31MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 31c[0m In commit adding relative sub-policy SampleConsortium/Org31MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 31d[0m Returning policy Org31MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 31e[0m In commit adding relative sub-policy SampleConsortium/Org31MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 31f[0m Returning policy Org26MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 320[0m In commit adding relative sub-policy SampleConsortium/Org26MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 321[0m Returning policy Org2MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 322[0m In commit adding relative sub-policy SampleConsortium/Org2MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 323[0m Returning policy Org10MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 324[0m In commit adding relative sub-policy SampleConsortium/Org10MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 325[0m Returning policy Org23MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 326[0m In commit adding relative sub-policy SampleConsortium/Org23MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 327[0m Returning policy Org5MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 328[0m In commit adding relative sub-policy SampleConsortium/Org5MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 329[0m Returning policy Org17MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 32a[0m In commit adding relative sub-policy SampleConsortium/Org17MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 32b[0m Returning policy Org18MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 32c[0m In commit adding relative sub-policy SampleConsortium/Org18MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 32d[0m Returning policy Org29MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 32e[0m In commit adding relative sub-policy SampleConsortium/Org29MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 32f[0m Returning policy Org25MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 330[0m In commit adding relative sub-policy SampleConsortium/Org25MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 331[0m Returning policy Org12MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 332[0m In commit adding relative sub-policy SampleConsortium/Org12MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 333[0m Returning policy Org13MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 334[0m In commit adding relative sub-policy SampleConsortium/Org13MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 335[0m Returning policy Org29MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 336[0m In commit adding relative sub-policy SampleConsortium/Org29MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 337[0m Returning policy Org30MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 338[0m In commit adding relative sub-policy SampleConsortium/Org30MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 339[0m Returning policy Org2MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 33a[0m In commit adding relative sub-policy SampleConsortium/Org2MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 33b[0m Returning policy Org23MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 33c[0m In commit adding relative sub-policy SampleConsortium/Org23MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 33d[0m Returning policy Org22MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 33e[0m In commit adding relative sub-policy SampleConsortium/Org22MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 33f[0m Returning policy Org17MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 340[0m In commit adding relative sub-policy SampleConsortium/Org17MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 341[0m Returning policy Org15MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 342[0m In commit adding relative sub-policy SampleConsortium/Org15MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 343[0m Returning policy Org31MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 344[0m In commit adding relative sub-policy SampleConsortium/Org31MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 345[0m Returning policy Org21MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 346[0m In commit adding relative sub-policy SampleConsortium/Org21MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 347[0m Returning policy Org9MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 348[0m In commit adding relative sub-policy SampleConsortium/Org9MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 349[0m Returning policy Org5MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 34a[0m In commit adding relative sub-policy SampleConsortium/Org5MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.967 UTC [policies] GetPolicy -> DEBU 34b[0m Returning policy Org8MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.967 UTC [policies] CommitProposals -> DEBU 34c[0m In commit adding relative sub-policy SampleConsortium/Org8MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 34d[0m Returning policy Org8MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 34e[0m In commit adding relative sub-policy SampleConsortium/Org8MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 34f[0m Returning policy Org4MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 350[0m In commit adding relative sub-policy SampleConsortium/Org4MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 351[0m Returning policy Org20MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 352[0m In commit adding relative sub-policy SampleConsortium/Org20MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 353[0m Returning policy Org7MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 354[0m In commit adding relative sub-policy SampleConsortium/Org7MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 355[0m Returning policy Org7MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 356[0m In commit adding relative sub-policy SampleConsortium/Org7MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 357[0m Returning policy Org1MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 358[0m In commit adding relative sub-policy SampleConsortium/Org1MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 359[0m Returning policy Org1MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 35a[0m In commit adding relative sub-policy SampleConsortium/Org1MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 35b[0m Returning policy Org16MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 35c[0m In commit adding relative sub-policy SampleConsortium/Org16MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 35d[0m Returning policy Org7MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 35e[0m In commit adding relative sub-policy SampleConsortium/Org7MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 35f[0m Returning policy Org30MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 360[0m In commit adding relative sub-policy SampleConsortium/Org30MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 361[0m Returning policy Org28MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 362[0m In commit adding relative sub-policy SampleConsortium/Org28MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 363[0m Returning policy Org27MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 364[0m In commit adding relative sub-policy SampleConsortium/Org27MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 365[0m Returning policy Org20MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 366[0m In commit adding relative sub-policy SampleConsortium/Org20MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 367[0m Returning policy Org29MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 368[0m In commit adding relative sub-policy SampleConsortium/Org29MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 369[0m Returning policy Org32MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 36a[0m In commit adding relative sub-policy SampleConsortium/Org32MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 36b[0m Returning policy Org25MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 36c[0m In commit adding relative sub-policy SampleConsortium/Org25MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 36d[0m Returning policy Org30MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 36e[0m In commit adding relative sub-policy SampleConsortium/Org30MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 36f[0m Returning policy Org17MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 370[0m In commit adding relative sub-policy SampleConsortium/Org17MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 371[0m Returning policy Org22MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 372[0m In commit adding relative sub-policy SampleConsortium/Org22MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 373[0m Returning policy Org19MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 374[0m In commit adding relative sub-policy SampleConsortium/Org19MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 375[0m Returning policy Org3MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 376[0m In commit adding relative sub-policy SampleConsortium/Org3MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 377[0m Returning policy Org26MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 378[0m In commit adding relative sub-policy SampleConsortium/Org26MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 379[0m Returning policy Org11MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 37a[0m In commit adding relative sub-policy SampleConsortium/Org11MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 37b[0m Returning policy Org9MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 37c[0m In commit adding relative sub-policy SampleConsortium/Org9MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 37d[0m Returning policy Org12MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 37e[0m In commit adding relative sub-policy SampleConsortium/Org12MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 37f[0m Returning policy Org12MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 380[0m In commit adding relative sub-policy SampleConsortium/Org12MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 381[0m Returning policy Org14MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 382[0m In commit adding relative sub-policy SampleConsortium/Org14MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 383[0m Returning policy Org2MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 384[0m In commit adding relative sub-policy SampleConsortium/Org2MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 385[0m Returning policy Org18MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 386[0m In commit adding relative sub-policy SampleConsortium/Org18MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 387[0m Returning policy Org23MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 388[0m In commit adding relative sub-policy SampleConsortium/Org23MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 389[0m Returning policy Org1MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 38a[0m In commit adding relative sub-policy SampleConsortium/Org1MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 38b[0m Returning policy Org6MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 38c[0m In commit adding relative sub-policy SampleConsortium/Org6MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 38d[0m Returning policy Org13MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 38e[0m In commit adding relative sub-policy SampleConsortium/Org13MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 38f[0m Returning policy Org5MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 390[0m In commit adding relative sub-policy SampleConsortium/Org5MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 391[0m Returning policy Org8MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 392[0m In commit adding relative sub-policy SampleConsortium/Org8MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 393[0m Returning policy Org10MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 394[0m In commit adding relative sub-policy SampleConsortium/Org10MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 395[0m Returning policy Org15MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 396[0m In commit adding relative sub-policy SampleConsortium/Org15MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 397[0m Returning policy Org27MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 398[0m In commit adding relative sub-policy SampleConsortium/Org27MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 399[0m Returning policy Org32MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 39a[0m In commit adding relative sub-policy SampleConsortium/Org32MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 39b[0m Returning policy Org3MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 39c[0m In commit adding relative sub-policy SampleConsortium/Org3MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 39d[0m Returning policy Org11MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 39e[0m In commit adding relative sub-policy SampleConsortium/Org11MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 39f[0m Returning policy Org11MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 3a0[0m In commit adding relative sub-policy SampleConsortium/Org11MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.968 UTC [policies] GetPolicy -> DEBU 3a1[0m Returning policy Org13MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.968 UTC [policies] CommitProposals -> DEBU 3a2[0m In commit adding relative sub-policy SampleConsortium/Org13MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3a3[0m Returning policy Org14MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3a4[0m In commit adding relative sub-policy SampleConsortium/Org14MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3a5[0m Returning policy Org16MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3a6[0m In commit adding relative sub-policy SampleConsortium/Org16MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3a7[0m Returning policy Org28MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3a8[0m In commit adding relative sub-policy SampleConsortium/Org28MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3a9[0m Returning policy Org24MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3aa[0m In commit adding relative sub-policy SampleConsortium/Org24MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3ab[0m Returning policy Org25MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3ac[0m In commit adding relative sub-policy SampleConsortium/Org25MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3ad[0m Returning policy Org3MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3ae[0m In commit adding relative sub-policy SampleConsortium/Org3MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3af[0m Returning policy Org21MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3b0[0m In commit adding relative sub-policy SampleConsortium/Org21MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3b1[0m Returning policy Org21MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3b2[0m In commit adding relative sub-policy SampleConsortium/Org21MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3b3[0m Returning policy Org6MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3b4[0m In commit adding relative sub-policy SampleConsortium/Org6MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3b5[0m Returning policy Org4MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3b6[0m In commit adding relative sub-policy SampleConsortium/Org4MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3b7[0m Returning policy Org20MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3b8[0m In commit adding relative sub-policy SampleConsortium/Org20MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3b9[0m Returning policy Org19MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3ba[0m In commit adding relative sub-policy SampleConsortium/Org19MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3bb[0m Returning policy Org19MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3bc[0m In commit adding relative sub-policy SampleConsortium/Org19MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3bd[0m Returning policy Org32MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3be[0m In commit adding relative sub-policy SampleConsortium/Org32MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3bf[0m Returning policy Org24MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3c0[0m In commit adding relative sub-policy SampleConsortium/Org24MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3c1[0m Returning policy Org9MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3c2[0m In commit adding relative sub-policy SampleConsortium/Org9MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3c3[0m Returning policy Org15MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3c4[0m In commit adding relative sub-policy SampleConsortium/Org15MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3c5[0m Returning policy Org27MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3c6[0m In commit adding relative sub-policy SampleConsortium/Org27MSP/Readers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3c7[0m Returning policy Org6MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3c8[0m In commit adding relative sub-policy SampleConsortium/Org6MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3c9[0m Returning policy Org14MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3ca[0m In commit adding relative sub-policy SampleConsortium/Org14MSP/Writers to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3cb[0m Returning policy Org10MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3cc[0m In commit adding relative sub-policy SampleConsortium/Org10MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3cd[0m Returning policy Org28MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3ce[0m In commit adding relative sub-policy SampleConsortium/Org28MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3cf[0m Returning policy Org4MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3d0[0m In commit adding relative sub-policy SampleConsortium/Org4MSP/Admins to Consortiums
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3d1[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3d2[0m In commit adding relative sub-policy OrdererOrg/Readers to Orderer
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3d3[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3d4[0m In commit adding relative sub-policy OrdererOrg/Writers to Orderer
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3d5[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3d6[0m In commit adding relative sub-policy OrdererOrg/Admins to Orderer
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3d7[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3d8[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3d9[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3da[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3db[0m Returning policy SampleConsortium/Org9MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3dc[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org9MSP/Writers to Channel
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3dd[0m Returning policy SampleConsortium/Org24MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3de[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org24MSP/Writers to Channel
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3df[0m Returning policy SampleConsortium/Org30MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3e0[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org30MSP/Admins to Channel
+[36m2017-05-04 19:42:42.969 UTC [policies] GetPolicy -> DEBU 3e1[0m Returning policy SampleConsortium/Org13MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.969 UTC [policies] CommitProposals -> DEBU 3e2[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org13MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3e3[0m Returning policy SampleConsortium/Org2MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3e4[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org2MSP/Admins to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3e5[0m Returning policy SampleConsortium/Org5MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3e6[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org5MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3e7[0m Returning policy SampleConsortium/Org16MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3e8[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org16MSP/Readers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3e9[0m Returning policy SampleConsortium/Org32MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3ea[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org32MSP/Admins to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3eb[0m Returning policy SampleConsortium/Org12MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3ec[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org12MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3ed[0m Returning policy SampleConsortium/Org16MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3ee[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org16MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3ef[0m Returning policy SampleConsortium/Org31MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3f0[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org31MSP/Admins to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3f1[0m Returning policy SampleConsortium/Org11MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3f2[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org11MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3f3[0m Returning policy SampleConsortium/Org7MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3f4[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org7MSP/Readers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3f5[0m Returning policy SampleConsortium/Org26MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3f6[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org26MSP/Admins to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3f7[0m Returning policy SampleConsortium/Org11MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3f8[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org11MSP/Admins to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3f9[0m Returning policy SampleConsortium/Org6MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3fa[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org6MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3fb[0m Returning policy SampleConsortium/Org8MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3fc[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org8MSP/Admins to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3fd[0m Returning policy SampleConsortium/Org10MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 3fe[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org10MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 3ff[0m Returning policy SampleConsortium/Org18MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 400[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org18MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 401[0m Returning policy SampleConsortium/Org23MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 402[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org23MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 403[0m Returning policy SampleConsortium/Org3MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 404[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org3MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 405[0m Returning policy SampleConsortium/Org32MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 406[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org32MSP/Writers to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 407[0m Returning policy SampleConsortium/Org16MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 408[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org16MSP/Admins to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 409[0m Returning policy SampleConsortium/Org7MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 40a[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org7MSP/Admins to Channel
+[36m2017-05-04 19:42:42.970 UTC [policies] GetPolicy -> DEBU 40b[0m Returning policy SampleConsortium/Org12MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.970 UTC [policies] CommitProposals -> DEBU 40c[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org12MSP/Admins to Channel
+[36m2017-05-04 19:42:42.972 UTC [policies] GetPolicy -> DEBU 40d[0m Returning policy SampleConsortium/Org10MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.972 UTC [policies] CommitProposals -> DEBU 40e[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org10MSP/Readers to Channel
+[36m2017-05-04 19:42:42.972 UTC [policies] GetPolicy -> DEBU 40f[0m Returning policy SampleConsortium/Org31MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.972 UTC [policies] CommitProposals -> DEBU 410[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org31MSP/Writers to Channel
+[36m2017-05-04 19:42:42.972 UTC [policies] GetPolicy -> DEBU 411[0m Returning policy SampleConsortium/Org14MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.972 UTC [policies] CommitProposals -> DEBU 412[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org14MSP/Readers to Channel
+[36m2017-05-04 19:42:42.972 UTC [policies] GetPolicy -> DEBU 413[0m Returning policy SampleConsortium/Org21MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.972 UTC [policies] CommitProposals -> DEBU 414[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org21MSP/Writers to Channel
+[36m2017-05-04 19:42:42.972 UTC [policies] GetPolicy -> DEBU 415[0m Returning policy SampleConsortium/Org24MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.972 UTC [policies] CommitProposals -> DEBU 416[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org24MSP/Admins to Channel
+[36m2017-05-04 19:42:42.972 UTC [policies] GetPolicy -> DEBU 417[0m Returning policy SampleConsortium/Org15MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.972 UTC [policies] CommitProposals -> DEBU 418[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org15MSP/Admins to Channel
+[36m2017-05-04 19:42:42.972 UTC [policies] GetPolicy -> DEBU 419[0m Returning policy SampleConsortium/Org28MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.972 UTC [policies] CommitProposals -> DEBU 41a[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org28MSP/Admins to Channel
+[36m2017-05-04 19:42:42.972 UTC [policies] GetPolicy -> DEBU 41b[0m Returning policy SampleConsortium/Org25MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.972 UTC [policies] CommitProposals -> DEBU 41c[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org25MSP/Writers to Channel
+[36m2017-05-04 19:42:42.972 UTC [policies] GetPolicy -> DEBU 41d[0m Returning policy SampleConsortium/Org9MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.972 UTC [policies] CommitProposals -> DEBU 41e[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org9MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 41f[0m Returning policy SampleConsortium/Org27MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 420[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org27MSP/Admins to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 421[0m Returning policy SampleConsortium/Org13MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 422[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org13MSP/Admins to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 423[0m Returning policy SampleConsortium/Org21MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 424[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org21MSP/Admins to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 425[0m Returning policy SampleConsortium/Org4MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 426[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org4MSP/Admins to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 427[0m Returning policy SampleConsortium/Org7MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 428[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org7MSP/Writers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 429[0m Returning policy SampleConsortium/Org30MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 42a[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org30MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 42b[0m Returning policy SampleConsortium/Org15MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 42c[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org15MSP/Writers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 42d[0m Returning policy SampleConsortium/Org31MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 42e[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org31MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 42f[0m Returning policy SampleConsortium/Org29MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 430[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org29MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 431[0m Returning policy SampleConsortium/Org17MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 432[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org17MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 433[0m Returning policy SampleConsortium/Org3MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 434[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org3MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 435[0m Returning policy SampleConsortium/Org5MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 436[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org5MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 437[0m Returning policy SampleConsortium/Org21MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 438[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org21MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 439[0m Returning policy SampleConsortium/Org9MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 43a[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org9MSP/Admins to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 43b[0m Returning policy SampleConsortium/Org27MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 43c[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org27MSP/Writers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 43d[0m Returning policy SampleConsortium/Org10MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 43e[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org10MSP/Admins to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 43f[0m Returning policy SampleConsortium/Org2MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 440[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org2MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 441[0m Returning policy SampleConsortium/Org17MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 442[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org17MSP/Admins to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 443[0m Returning policy SampleConsortium/Org13MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 444[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org13MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 445[0m Returning policy SampleConsortium/Org26MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 446[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org26MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 447[0m Returning policy SampleConsortium/Org20MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 448[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org20MSP/Admins to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 449[0m Returning policy SampleConsortium/Org6MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 44a[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org6MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 44b[0m Returning policy SampleConsortium/Org14MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 44c[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org14MSP/Writers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 44d[0m Returning policy SampleConsortium/Org22MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 44e[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org22MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 44f[0m Returning policy SampleConsortium/Org28MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 450[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org28MSP/Readers to Channel
+[36m2017-05-04 19:42:42.973 UTC [policies] GetPolicy -> DEBU 451[0m Returning policy SampleConsortium/Org1MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.973 UTC [policies] CommitProposals -> DEBU 452[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org1MSP/Admins to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 453[0m Returning policy SampleConsortium/Org28MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 454[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org28MSP/Writers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 455[0m Returning policy SampleConsortium/Org29MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 456[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org29MSP/Writers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 457[0m Returning policy SampleConsortium/Org23MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 458[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org23MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 459[0m Returning policy SampleConsortium/Org11MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 45a[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org11MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 45b[0m Returning policy SampleConsortium/Org14MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 45c[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org14MSP/Admins to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 45d[0m Returning policy SampleConsortium/Org18MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 45e[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org18MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 45f[0m Returning policy SampleConsortium/Org17MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 460[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org17MSP/Writers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 461[0m Returning policy SampleConsortium/Org25MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 462[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org25MSP/Admins to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 463[0m Returning policy SampleConsortium/Org8MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 464[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org8MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 465[0m Returning policy SampleConsortium/Org1MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 466[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org1MSP/Writers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 467[0m Returning policy SampleConsortium/Org18MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 468[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org18MSP/Admins to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 469[0m Returning policy SampleConsortium/Org4MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 46a[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org4MSP/Writers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 46b[0m Returning policy SampleConsortium/Org5MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 46c[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org5MSP/Admins to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 46d[0m Returning policy SampleConsortium/Org29MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 46e[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org29MSP/Admins to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 46f[0m Returning policy SampleConsortium/Org8MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 470[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org8MSP/Writers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 471[0m Returning policy SampleConsortium/Org4MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 472[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org4MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 473[0m Returning policy SampleConsortium/Org2MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 474[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org2MSP/Writers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 475[0m Returning policy SampleConsortium/Org15MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 476[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org15MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 477[0m Returning policy SampleConsortium/Org3MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 478[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org3MSP/Admins to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 479[0m Returning policy SampleConsortium/Org19MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 47a[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org19MSP/Writers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 47b[0m Returning policy SampleConsortium/Org23MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 47c[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org23MSP/Admins to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 47d[0m Returning policy SampleConsortium/Org12MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 47e[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org12MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 47f[0m Returning policy SampleConsortium/Org19MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 480[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org19MSP/Admins to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 481[0m Returning policy SampleConsortium/Org22MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 482[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org22MSP/Writers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 483[0m Returning policy SampleConsortium/Org20MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 484[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org20MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 485[0m Returning policy SampleConsortium/Org19MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 486[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org19MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 487[0m Returning policy SampleConsortium/Org24MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 488[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org24MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 489[0m Returning policy SampleConsortium/Org32MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 48a[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org32MSP/Readers to Channel
+[36m2017-05-04 19:42:42.974 UTC [policies] GetPolicy -> DEBU 48b[0m Returning policy SampleConsortium/Org25MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.974 UTC [policies] CommitProposals -> DEBU 48c[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org25MSP/Readers to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 48d[0m Returning policy SampleConsortium/Org30MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 48e[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org30MSP/Writers to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 48f[0m Returning policy SampleConsortium/Org1MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 490[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org1MSP/Readers to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 491[0m Returning policy SampleConsortium/Org20MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 492[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org20MSP/Writers to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 493[0m Returning policy SampleConsortium/Org27MSP/Readers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 494[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org27MSP/Readers to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 495[0m Returning policy SampleConsortium/Org6MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 496[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org6MSP/Admins to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 497[0m Returning policy SampleConsortium/Org26MSP/Writers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 498[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org26MSP/Writers to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 499[0m Returning policy SampleConsortium/Org22MSP/Admins for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 49a[0m In commit adding relative sub-policy Consortiums/SampleConsortium/Org22MSP/Admins to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 49b[0m Returning policy OrdererOrg/Writers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 49c[0m In commit adding relative sub-policy Orderer/OrdererOrg/Writers to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 49d[0m Returning policy OrdererOrg/Admins for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 49e[0m In commit adding relative sub-policy Orderer/OrdererOrg/Admins to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 49f[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 4a0[0m In commit adding relative sub-policy Orderer/Admins to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4a1[0m Returning policy BlockValidation for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 4a2[0m In commit adding relative sub-policy Orderer/BlockValidation to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4a3[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 4a4[0m In commit adding relative sub-policy Orderer/Readers to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4a5[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 4a6[0m In commit adding relative sub-policy Orderer/Writers to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4a7[0m Returning policy OrdererOrg/Readers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 4a8[0m In commit adding relative sub-policy Orderer/OrdererOrg/Readers to Channel
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4a9[0m Returning dummy reject all policy because Readers could not be found in /Consortiums/Readers
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4aa[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4ab[0m Returning dummy reject all policy because Writers could not be found in /Consortiums/Writers
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4ac[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4ad[0m Returning policy Admins for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4ae[0m Returning dummy reject all policy because Admins could not be found in /Consortiums/Admins
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4af[0m Returning policy Readers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 4b0[0m As expected, current configuration has policy '/Channel/Readers'
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4b1[0m Returning policy Writers for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 4b2[0m As expected, current configuration has policy '/Channel/Writers'
+[36m2017-05-04 19:42:42.975 UTC [policies] GetPolicy -> DEBU 4b3[0m Returning policy Orderer/BlockValidation for evaluation
+[36m2017-05-04 19:42:42.975 UTC [policies] CommitProposals -> DEBU 4b4[0m As expected, current configuration has policy '/Channel/Orderer/BlockValidation'
+[36m2017-05-04 19:42:42.975 UTC [kvledger] retrieveBlockByNumber -> DEBU 4b5[0m retrieveBlockByNumber() - blockNum = [0]
+[36m2017-05-04 19:42:42.975 UTC [kvledger] newBlockfileStream -> DEBU 4b6[0m newBlockfileStream(): filePath=[/var/hyperledger/production/orderer/chains/testchainid/blockfile_000000], startOffset=[0]
+[36m2017-05-04 19:42:42.975 UTC [kvledger] nextBlockBytesAndPlacementInfo -> DEBU 4b7[0m Remaining bytes=[64207], Going to peek [8] bytes
+[36m2017-05-04 19:42:42.975 UTC [kvledger] nextBlockBytesAndPlacementInfo -> DEBU 4b8[0m Returning blockbytes - length=[64204], placementInfo={fileNum=[0], startOffset=[0], bytesOffset=[3]}
+[36m2017-05-04 19:42:42.976 UTC [orderer/multichain] newChainSupport -> DEBU 4b9[0m [channel: testchainid] Retrieved metadata for tip of chain (block #0): 
+[36m2017-05-04 19:42:42.976 UTC [orderer/kafka] newChain -> DEBU 4ba[0m [channel: testchainid] Starting chain with last persisted offset -3 and last recorded block 0
+[36m2017-05-04 19:42:45.976 UTC [orderer/kafka] newProducer -> DEBU 4bb[0m Connecting to Kafka cluster: [9.37.192.36:9092 9.37.192.36:9093 9.37.192.36:9094 9.37.192.36:9095 9.37.192.36:9096]
+[36m2017-05-04 19:42:45.995 UTC [orderer/kafka] newProducer -> DEBU 4bc[0m Connected to the Kafka cluster
+2017-05-04 19:42:45.995 UTC [orderer/multichain] NewManagerImpl -> INFO 4bd[0m Starting with system channel testchainid and orderer type kafka
+[36m2017-05-04 19:42:45.995 UTC [orderer/kafka] Start -> DEBU 4be[0m [channel: testchainid] Posting the CONNECT message...
+[33m2017-05-04 19:42:46.308 UTC [orderer/kafka] Send -> WARN 4bf[0m [channel: testchainid] Blob destined for partition 0, but posted to -1 instead
+2017-05-04 19:42:46.308 UTC [orderer/kafka] Send -> INFO 4c0[0m [channel testchainid] Failed to post blob to the Kafka cluster: dial tcp 9.42.20.81:9092: getsockopt: connection refused
+[35m2017-05-04 19:42:46.308 UTC [orderer/kafka] Start -> CRIT 4c1[0m [channel: testchainid] Cannot post CONNECT message: dial tcp 9.42.20.81:9092: getsockopt: connection refused
+2017-05-04 19:42:46.308 UTC [orderer/main] NewServer -> INFO 4c2[0m Starting orderer
+2017-05-04 19:42:46.308 UTC [orderer/main] main -> INFO 4c3[0m Beginning to serve requests
