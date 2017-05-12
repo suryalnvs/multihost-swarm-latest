@@ -2,17 +2,17 @@
 
 #Node names and IP addresses of the hosts to be used
 ZK_NODE="manager" # Node name of the host where zookeeper to be launched
-ZK_IP="9.37.192.36" #Ip address of the host where zookeeper is running
+ZK_IP="192.37.192.36" #Ip address of the host where zookeeper is running
 KAFKA_NODE="manager" #Node name of the host where kafka to be launched
 ORDERER_NODE="manager" #Node name of the host where orderer to be launched
 PEER_NODE1="fabric06"
-PEER_IP1="9.37.138.34"
+PEER_IP1="192.37.138.34"
 PEER_NODE2="fabric07"
-PEER_IP2="9.37.138.38"
+PEER_IP2="192.37.138.38"
 PEER_NODE3="fabric08"
-PEER_IP3="9.42.21.199"
+PEER_IP3="192.42.21.199"
 PEER_NODE4="fabric09"
-PEER_IP4="9.42.21.226"
+PEER_IP4="192.42.21.226"
 
 
 
